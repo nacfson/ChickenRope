@@ -13,6 +13,10 @@ public class GrapplingHook : MonoBehaviour
 
     [SerializeField]
     private float _applyAngle = 0f;
+    [SerializeField]
+    private GameObject _aimParent;
+    [SerializeField]
+    private float _speed = 5f;
     private bool _upAngle;
 
     public LineRenderer line;
@@ -24,20 +28,18 @@ public class GrapplingHook : MonoBehaviour
         line.positionCount = 2;
         line.endWidth = line.startWidth = 0.05f;
         line.SetPosition(0, transform.position);
-        line.SetPosition(0, hook.position);
+        line.SetPosition(1, hook.position);
         line.useWorldSpace = true;
     }
 
     void FixedUpdate()
     {
-        Vector2 MousePosition = Input.mousePosition;
-        hook.position = camera.ScreenToWorldPoint(MousePosition);
+        
         line.SetPosition(0, transform.position);
-        line.SetPosition(0, hook.position);
-
+        line.SetPosition(1, hook.position);
+        SwapAngle();
 
     }
-
 
 
 
@@ -53,13 +55,13 @@ public class GrapplingHook : MonoBehaviour
         }
         if(_upAngle)
         {
-            _applyAngle += Time.deltaTime;
+            _applyAngle += Time.deltaTime * 10 * _speed;
         }
         else
         {
-            _applyAngle -= Time.deltaTime;
-
+            _applyAngle -= Time.deltaTime * 10 * _speed;
         }
-        Debug.Log(_applyAngle);
+        _aimParent.GetComponent<Transform>().eulerAngles = new Vector3(0, 0, _applyAngle);
+        UnityEngine.Debug.Log(_applyAngle);
     }
 }
