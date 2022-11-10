@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 313675269}
   m_Layer: 0
   m_Name: trab
-  m_TagString: Untagged
+  m_TagString: trab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2020249975}
+  backpos: {x: 0, y: 0, z: 0}
 --- !u!70 &313675270
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -480,6 +481,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1488406743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1488406744}
+  - component: {fileID: 1488406745}
+  - component: {fileID: 1488406746}
+  m_Layer: 0
+  m_Name: trabCollision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1488406744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488406743}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.700001, y: -0.5100002, z: -7.1052885}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1488406745
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488406743}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.03, y: 5.69}
+  m_EdgeRadius: 0
+--- !u!114 &1488406746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488406743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090b74daec44d6649845dba5c6633313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trab2: {fileID: 1715937014}
 --- !u!1 &1715937009
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +567,7 @@ GameObject:
   - component: {fileID: 1715937010}
   m_Layer: 0
   m_Name: trab 2
-  m_TagString: Untagged
+  m_TagString: trab2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,7 +606,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 22.97, y: -23}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -545,7 +617,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.5, y: 6.85}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &1715937012
 SpriteRenderer:
@@ -624,6 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefd9e63a6f96944c949794036f2df11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!1 &2020249975
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +710,7 @@ GameObject:
   - component: {fileID: 2020249977}
   - component: {fileID: 2020249976}
   - component: {fileID: 2020249980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: testPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -750,7 +823,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020249975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 0.44, z: 0}
+  m_LocalPosition: {x: 1, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -772,8 +845,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   below: 0
+  back: 0
   Speed: 3
   jumpCount: 1
+  returntime: 10
 --- !u!1 &2041569066
 GameObject:
   m_ObjectHideFlags: 0
