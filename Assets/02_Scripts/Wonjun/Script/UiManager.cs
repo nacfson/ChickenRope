@@ -27,4 +27,5 @@ public class UiManager : MonoBehaviour
         Debug.Log("게임나가지기");
     }
 
+    
 }
