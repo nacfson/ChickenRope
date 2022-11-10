@@ -10,7 +10,10 @@ public class PlayerTest : MonoBehaviour
     private ReBack reback;
     [SerializeField] private bool back;
 
+    private BoxCollider2D _boxcol;
     private Rigidbody2D _rigid;
+
+
     public float Speed = 3f;
     public int jumpCount = 1;
     public float returntime = 10;
@@ -23,11 +26,14 @@ public class PlayerTest : MonoBehaviour
         back = false;
         _rigid = GetComponent<Rigidbody2D>();
         reback = GameObject.Find("trab").GetComponent<ReBack>();
+        _boxcol = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        
         below = Physics2D.Raycast(transform.position, Vector2.down, 3f, a);
 
          returntime += Time.deltaTime;
@@ -59,5 +65,6 @@ public class PlayerTest : MonoBehaviour
         }
         
     }
+    
 
 }
