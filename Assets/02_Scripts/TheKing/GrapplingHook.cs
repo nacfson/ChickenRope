@@ -32,6 +32,8 @@ public class GrapplingHook : MonoBehaviour
     void Start()
     {
         //line = GetComponentInChildren<LineRenderer>();
+
+
         line.positionCount = 2;
         line.endWidth = line.startWidth = 0.05f;
         line.SetPosition(0, transform.position);
