@@ -17,7 +17,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] Button startButton;
     [SerializeField] Image stageImage;
     [SerializeField] TextMeshProUGUI stageName;
-    [SerializeField] SceneManager sceneManager;
+    [SerializeField] SceneMoveManager sceneManager;
 
     public List<MapDataProperty> mapData; 
 
