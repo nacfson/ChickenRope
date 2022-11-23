@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     GrapplingHook hook;
     [SerializeField]
-    private float _speed = 3f;
+    private float _speed = 100f;
     [SerializeField]
     private float _jumpPower = 2f;
     private Rigidbody2D _rigid;
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
         hook = GetComponent<GrapplingHook>();   
     }
 
-    void FixedUpdate()
+    void Update()
     {
         OnMove();
     }
@@ -26,8 +26,7 @@ public class Player : MonoBehaviour
         float input = Input.GetAxis("Horizontal");
         if(hook.isAttach)
         {
-            transform.Translate(Vector3.right * input * Time.fixedDeltaTime * _speed);
-
+            _rigid.AddForce(new Vector2((input) * _speed * Time.deltaTime, 0));
         }
     }
     public void OnJump()
