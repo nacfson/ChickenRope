@@ -1228,14 +1228,15 @@ MonoBehaviour:
   stageName: {fileID: 417979849}
   sceneManager: {fileID: 779421751}
   mapData:
-  - mapSprite: {fileID: 21300000, guid: 08334fc3e03590c47afea817cc3463ac, type: 3}
+  - mapSprite: {fileID: 6827237486290818563, guid: 5181f67785f83ad44949f074e948cbac, type: 3}
     mapName: Stage01
-  - mapSprite: {fileID: 21300000, guid: 4f0e66c18bc0add45898176866670f1e, type: 3}
+  - mapSprite: {fileID: 7401597365613437681, guid: 5181f67785f83ad44949f074e948cbac, type: 3}
     mapName: Stage02
-  - mapSprite: {fileID: 21300000, guid: 6aace9bcac5bf9d49bf3a0bc097ee0f6, type: 3}
+  - mapSprite: {fileID: -1608008311667981770, guid: 5181f67785f83ad44949f074e948cbac, type: 3}
     mapName: Stage03
-  - mapSprite: {fileID: 21300000, guid: bad48c75a9801a24fb0ffee318a38902, type: 3}
+  - mapSprite: {fileID: 7034223609390794741, guid: 5181f67785f83ad44949f074e948cbac, type: 3}
     mapName: Stage04
+  currentPage: 0
 --- !u!114 &1954316131
 MonoBehaviour:
   m_ObjectHideFlags: 0
