@@ -48,14 +48,11 @@ public class GrapplingHook : MonoBehaviour
         SwapAngle();
         if(Input.GetKeyDown(keyCode) &&!isHookActive)
         {
-            hook.gameObject.SetActive(true);
-
             hook.position = transform.position;
-            //mouseDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             mouseDir = _aimParent.transform.GetChild(0).position - transform.position;
             isHookActive = true;
+            hook.gameObject.SetActive(true);
             isLineMax = false;
-            //_aimParent.transform.rotation
         }
         if(isHookActive && !isLineMax && !isAttach)
         {

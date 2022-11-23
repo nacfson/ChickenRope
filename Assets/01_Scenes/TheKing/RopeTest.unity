@@ -286,21 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a277d5be95c0894eb4a14c990e8460c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnMovement:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 173747253}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   OnJump:
     m_PersistentCalls:
       m_Calls:
@@ -874,7 +859,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3912118}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.10878819
 --- !u!232 &1043746921
@@ -887,7 +872,7 @@ DistanceJoint2D:
   m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1043746922}
+  m_ConnectedRigidBody: {fileID: 173747248}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
@@ -904,14 +889,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043746918}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -929,7 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e65f8159dcb7646800802ac8959d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joint2D: {fileID: 0}
+  joint2D: {fileID: 1043746921}
 --- !u!1 &1301224967
 GameObject:
   m_ObjectHideFlags: 0

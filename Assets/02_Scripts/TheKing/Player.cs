@@ -16,11 +16,17 @@ public class Player : MonoBehaviour
         hook = GetComponent<GrapplingHook>();   
     }
 
-    public void OnMove(Vector2 input)
+    void FixedUpdate()
     {
+        OnMove();
+    }
+
+    public void OnMove()
+    {
+        float input = Input.GetAxis("Horizontal");
         if(hook.isAttach)
         {
-            transform.Translate(input * Time.fixedDeltaTime * _speed);
+            transform.Translate(Vector3.right * input * Time.fixedDeltaTime * _speed);
 
         }
     }

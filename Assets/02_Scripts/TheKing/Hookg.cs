@@ -10,8 +10,6 @@ public class Hookg : MonoBehaviour
     {
         grappling = GameObject.Find("Player").GetComponent<GrapplingHook>();
         joint2D = GetComponent<DistanceJoint2D>();  
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class PlayerInputs : MonoBehaviour
 {
-    public UnityEvent<Vector2> OnMovement;
     public UnityEvent OnJump;
     private void Update()
     {
