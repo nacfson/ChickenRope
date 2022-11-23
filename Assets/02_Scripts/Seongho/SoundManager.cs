@@ -10,8 +10,10 @@ public class SoundManager : MonoBehaviour
     public AudioSource EffectSource;
     public AudioClip[] cd;
 
-    public  bool BG_IsCanMute = true;
-    public  bool EF_IsCanMute = true;
+    Stack<float>[] stack;
+
+    public bool BG_IsCanMute = true;
+    public bool EF_IsCanMute = true;
 
     [Header("¹è°æ À½¾Ç")]
     [SerializeField] private Button BackGroundBtn;
@@ -28,32 +30,38 @@ public class SoundManager : MonoBehaviour
     public void SetMusicVolume(float volume)
     {
         musicSource.volume = volume;
+        stack[0].Push(volume);
     }
     public void SetSoundEffect(float volume)
     {
         EffectSource.volume = volume;
+        stack[1].Push(volume);
     }
     public void MuteBackGroundSound()
     {
-        SetCanMute(ref BG_IsCanMute, musicSource, MuteBackGorundSprite, BackGoundSprite, BackGroundBtn);
+        SetCanMute(ref BG_IsCanMute, 0, musicSource, MuteBackGorundSprite, BackGoundSprite, BackGroundBtn);
     }
 
     public void MuteEffectSound()
     {
-        SetCanMute(ref EF_IsCanMute, EffectSource, MuteEffectSprite, EffectSprite, EffectBtn);
+        SetCanMute(ref EF_IsCanMute, 1, EffectSource, MuteEffectSprite, EffectSprite, EffectBtn);
     }
-    public void SetCanMute(ref bool Mute, AudioSource audioSource, Sprite MuteSprite, Sprite sprite, Button button)
+    public void SetCanMute(ref bool Mute, int index, AudioSource audioSource, Sprite MuteSprite, Sprite sprite, Button button)
     {
         if (Mute)
         {
             button.image.sprite = MuteSprite;
-            audioSource.Pause();
+            //audioSource.Pause();
+
+            audioSource.volume = 0;
             Mute = false;
         }
         else if (!Mute)
         {
             button.image.sprite = sprite;
-            audioSource.UnPause();
+            //audioSource.UnPause();
+
+            audioSource.volume = stack[index].Pop();
             Mute = true;
         }
     }
