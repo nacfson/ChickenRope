@@ -6,12 +6,15 @@ public class PlayerTest : MonoBehaviour
 {
     public LayerMask a;
     public bool below;
+    SpriteRenderer sp;
+
 
     private ReBack reback;
     [SerializeField] private bool back;
 
     private BoxCollider2D _boxcol;
     private Rigidbody2D _rigid;
+    private Animator pAnimation;
 
 
     public float Speed = 3f;
@@ -23,10 +26,12 @@ public class PlayerTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sp = GetComponent<SpriteRenderer>();
         back = false;
         _rigid = GetComponent<Rigidbody2D>();
         reback = GameObject.Find("trab").GetComponent<ReBack>();
         _boxcol = GetComponent<BoxCollider2D>();
+        pAnimation = GetComponent<Animator>();  
     }
 
     // Update is called once per frame
@@ -44,13 +49,32 @@ public class PlayerTest : MonoBehaviour
             returntime = 0;
         }
 
+        
         float x = Input.GetAxisRaw("Horizontal");
         Vector3 dir = new Vector3(x, 0, 0);  
         transform.position += dir * Speed * Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount >=1 && below == true)
         {
-            _rigid.velocity = new Vector2(_rigid.velocity.x, 20f);
+            _rigid.velocity = new Vector2(_rigid.velocity.x, 10f);
             jumpCount--;
+            StartCoroutine(Jump());
+        }
+
+        if (x < 0)
+        {
+            //¿ÞÂÊ
+            sp.flipX = false;
+            pAnimation.SetBool("run", true);
+        }
+        else if (x > 0)
+        {
+            //¿À¸¥ÂÊ
+            sp.flipX = true;
+            pAnimation.SetBool("run", true);
+        }
+        else
+        {
+            pAnimation.SetBool("run", false);
         }
 
     }
@@ -64,6 +88,13 @@ public class PlayerTest : MonoBehaviour
 
         }
         
+    }
+
+    IEnumerator Jump()
+    {
+        pAnimation.SetBool("Jump", true);
+        yield return new WaitForSeconds(1);
+        pAnimation.SetBool("Jump", false);
     }
     
 
