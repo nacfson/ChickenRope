@@ -10,8 +10,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _jumpPower = 2f;
     private Rigidbody2D _rigid;
+    private SpriteRenderer _spriteRenderer;
+    private Animator _animator;
     private void Awake()
     {
+        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
         hook = GetComponent<GrapplingHook>();   
     }
@@ -24,12 +28,27 @@ public class Player : MonoBehaviour
     public void OnMove()
     {
         float input = Input.GetAxis("Horizontal");
-        if(true)
-        {
-            Debug.Log(input);
-            Debug.Log(_speed);
+        FlipCharacter(input);
 
-            _rigid.AddForce(Vector3.right * input * _speed * Time.deltaTime,ForceMode2D.Impulse);
+
+        _rigid.AddForce(Vector3.right * input * _speed * Time.deltaTime,ForceMode2D.Impulse);
+        
+    }
+    void FlipCharacter(float x)
+    {
+        if(x > 0 )
+        {
+            _spriteRenderer.flipX = true;
+            _animator.SetBool("run",true);
+        }
+        else if( x < 0)
+        {
+            _spriteRenderer.flipX = false;
+            _animator.SetBool("run", true);
+        }
+        else
+        {
+            _animator.SetBool("run", false);
         }
     }
     public void OnJump()

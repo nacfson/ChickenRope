@@ -40,6 +40,7 @@ public class GrapplingHook : MonoBehaviour
         line.SetPosition(1, hook.position);
         line.useWorldSpace = true;
         isAttach = false;
+        line.enabled = false;
     }
 
     void Update()
@@ -50,6 +51,8 @@ public class GrapplingHook : MonoBehaviour
         SwapAngle();
         if(Input.GetKeyDown(keyCode) &&!isHookActive)
         {
+            line.enabled = true;
+
             hook.position = transform.position;
             mouseDir = _aimParent.transform.GetChild(0).position - transform.position;
             isHookActive = true;
@@ -94,7 +97,7 @@ public class GrapplingHook : MonoBehaviour
 
     public void SwapAngle()
     {
-        if(isHookActive)
+        if(true)
         {
             if (_applyAngle <= _angleMinLimit)
             {
