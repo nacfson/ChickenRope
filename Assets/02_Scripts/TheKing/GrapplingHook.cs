@@ -94,7 +94,7 @@ public class GrapplingHook : MonoBehaviour
 
     public void SwapAngle()
     {
-        if(!isHookActive)
+        if(isHookActive)
         {
             if (_applyAngle <= _angleMinLimit)
             {
