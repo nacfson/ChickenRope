@@ -6,10 +6,8 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Trab2 : MonoBehaviour
 {
-    
     private Rigidbody2D _rigid;
 
-    public Collider2D[] colliders;
     private void Start()
     {
         _rigid = GetComponent<Rigidbody2D>();
