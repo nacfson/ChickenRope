@@ -24,12 +24,11 @@ public class Player : MonoBehaviour
     public void OnMove()
     {
         float input = Input.GetAxis("Horizontal");
-
-        if(hook.isAttach)
+        Debug.Log(input);
+        if(true)
         {
             _rigid.AddForce(new Vector2((input) * _speed * Time.deltaTime, 0));
         }
-
     }
     public void OnJump()
     {
