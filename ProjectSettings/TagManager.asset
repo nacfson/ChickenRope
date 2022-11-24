@@ -4,13 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - trab2
-  - trab
-=======
-  - Ground
   - Ring
->>>>>>> main
+  - trab
+  - trab2
+  - Speedtrab
   layers:
   - Default
   - TransparentFX
@@ -18,15 +15,9 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< HEAD
-  - rand
-  - Player
-  - Minimap
-=======
-  - Ignore
-  - Player
   - 
->>>>>>> main
+  - 
+  - 
   - 
   - 
   - 
