@@ -33,12 +33,21 @@ public class PlayerTest : MonoBehaviour
         _boxcol = GetComponent<BoxCollider2D>();
         pAnimation = GetComponent<Animator>();  
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Speedtrab"))
+        {
+            _rigid.gravityScale = 5;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        _rigid.gravityScale = 1;
+    }
 
     // Update is called once per frame
     void Update()
     {
-
-        
         below = Physics2D.Raycast(transform.position, Vector2.down, 3f, a);
 
          returntime += Time.deltaTime;
