@@ -29,9 +29,10 @@ public class PlayerTest : MonoBehaviour
         sp = GetComponent<SpriteRenderer>();
         back = false;
         _rigid = GetComponent<Rigidbody2D>();
-        reback = GameObject.Find("trab").GetComponent<ReBack>();
+        //reback = GameObject.Find("trab").GetComponent<ReBack>();
         _boxcol = GetComponent<BoxCollider2D>();
-        pAnimation = GetComponent<Animator>();  
+        pAnimation = GetComponent<Animator>();
+        Debug.Log(pAnimation + "dds");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -58,10 +59,10 @@ public class PlayerTest : MonoBehaviour
             returntime = 0;
         }
 
-        
+
         float x = Input.GetAxisRaw("Horizontal");
-        Vector3 dir = new Vector3(x, 0, 0);  
-        transform.position += dir * Speed * Time.deltaTime;
+        Vector3 dir = new Vector3(x, 0, 0);
+        _rigid.AddForce(Vector3.right * x * Speed * Time.deltaTime, ForceMode2D.Impulse);
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount >=1 && below == true)
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, 10f);
