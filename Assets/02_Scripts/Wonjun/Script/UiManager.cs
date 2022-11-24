@@ -22,10 +22,9 @@ public class UiManager : MonoBehaviour
 
     public void Exit()// 게임 시작 화며에서 게임 나가기
     {
-        Application
-            .Quit();
+        Application.Quit();
         Debug.Log("게임나가지기");
     }
 
-    
+
 }

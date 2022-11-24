@@ -9,6 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            Debug.Log("WEQr");
             sound.EffectSource.PlayOneShot(sound.PlaySound(0));
         }
     }

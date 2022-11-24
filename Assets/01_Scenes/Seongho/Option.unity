@@ -153,8 +153,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 694034685}
   - {fileID: 909525047}
+  - {fileID: 694034685}
   - {fileID: 1448492133}
   - {fileID: 1918322389}
   - {fileID: 596931053}
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7390560224966502635, guid: c92908b312ca28045adf51d2c1058049, type: 3}
+  m_Sprite: {fileID: -7390560224966502635, guid: c1ab888943a582d499a4aad065637470, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -490,7 +490,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 15, y: 0}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &503988284
 MonoBehaviour:
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7483844817464667245, guid: 11895e09a8920de4fbc3ada538cb342b, type: 3}
+  m_Sprite: {fileID: 8499558401164364211, guid: f70a740c5c877254098c59d1829e18a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -610,7 +610,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -1393, y: -88.7}
-  m_SizeDelta: {x: 100, y: 50}
+  m_SizeDelta: {x: 110.84, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &596931054
 MonoBehaviour:
@@ -631,18 +631,18 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.31764707, g: 0.31764707, b: 0.31764707, a: 1}
+    m_PressedColor: {r: 0.9716981, g: 0.64043766, b: 0.022000683, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 7855009281406995327, guid: cb03943d2b98185479cc13be13a1839b, type: 3}
+    m_PressedSprite: {fileID: -2875451725827336238, guid: baa08b895f4363a4fa226d9be67871f7, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1889804897374107805, guid: cb03943d2b98185479cc13be13a1839b, type: 3}
+  m_Sprite: {fileID: 1870887884173457352, guid: 525c0f9eea6a44142ae7dea9ae7ed2f8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -726,11 +726,11 @@ RectTransform:
   - {fileID: 922905517}
   - {fileID: 1100789815}
   m_Father: {fileID: 197500746}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 168, y: 512}
+  m_AnchoredPosition: {x: 168, y: 535}
   m_SizeDelta: {x: 160, y: -700}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &694034686
@@ -787,7 +787,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1875989143}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: SetMusicVolume
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -831,7 +831,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 15, y: 0}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &788127525
 MonoBehaviour:
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7483844817464667245, guid: 11895e09a8920de4fbc3ada538cb342b, type: 3}
+  m_Sprite: {fileID: 8499558401164364211, guid: f70a740c5c877254098c59d1829e18a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -903,7 +903,7 @@ RectTransform:
   - {fileID: 238254070}
   - {fileID: 1283331030}
   m_Father: {fileID: 197500746}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -964,11 +964,11 @@ MonoBehaviour:
       - m_Target: {fileID: 1875989143}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: SetSoundEffect
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1201,7 +1201,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -8, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1113925043
 GameObject:
@@ -1445,7 +1445,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -8, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1448492132
 GameObject:
@@ -1479,10 +1479,10 @@ RectTransform:
   m_Father: {fileID: 197500746}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.00000023839448, y: -105}
-  m_SizeDelta: {x: 100.74628, y: 155.06}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 314}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1448492134
 MonoBehaviour:
@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7267828462667370698, guid: c92908b312ca28045adf51d2c1058049, type: 3}
+  m_Sprite: {fileID: -8942107932711748470, guid: f70a740c5c877254098c59d1829e18a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1707,18 +1707,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 382267334c8ecfe45a20c6a7def2d9f4, type: 3}
   BG_IsCanMute: 1
   EF_IsCanMute: 1
-  stackValue:
-  - 0
-  - 0
-  slider:
-  - {fileID: 694034686}
-  - {fileID: 909525048}
   BackGroundBtn: {fileID: 2110521575}
   MuteBackGorundSprite: {fileID: 21300000, guid: 86afeafd89f138e46ba67f091dbb0996, type: 3}
   BackGoundSprite: {fileID: 21300000, guid: 77cdcac1d027ee246bd4291e1f6839cd, type: 3}
   EffectBtn: {fileID: 1113925045}
-  MuteEffectSprite: {fileID: 21300000, guid: 0aa1ff6e316fd814489d154730c66a91, type: 3}
-  EffectSprite: {fileID: 21300000, guid: eedf88c08cafff04cbb81be513549fff, type: 3}
+  MuteEffectSprite: {fileID: 21300000, guid: eedf88c08cafff04cbb81be513549fff, type: 3}
+  EffectSprite: {fileID: 21300000, guid: 0aa1ff6e316fd814489d154730c66a91, type: 3}
 --- !u!4 &1875989144
 Transform:
   m_ObjectHideFlags: 0
@@ -1801,7 +1795,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: -2875451725827336238, guid: b46ee3aebabd7b342969b10a5f8c4237, type: 3}
+    m_PressedSprite: {fileID: -2875451725827336238, guid: baa08b895f4363a4fa226d9be67871f7, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -1835,7 +1829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8580378784410186006, guid: b46ee3aebabd7b342969b10a5f8c4237, type: 3}
+  m_Sprite: {fileID: -8580378784410186006, guid: baa08b895f4363a4fa226d9be67871f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2161,7 +2155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -448, y: 154}
+  m_AnchoredPosition: {x: -448, y: 168}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2110521575
