@@ -8,27 +8,36 @@ public class SoundManager : MonoBehaviour
 {
     public AudioSource musicSource;
     public AudioSource EffectSource;
-    public AudioClip[] cd;
+
+    public AudioClip[] cd; // 사용법 : sound.EffectSource.PlayOneShot(sound.PlaySound(0))ㅋㅋㅋㅋ시기다른;
 
 
+    #region 사운드 이미지 설정
     public bool BG_IsCanMute = true;
     public bool EF_IsCanMute = true;
 
     public float[] stackValue = new float[2];
     public Slider[] slider = new Slider[2];
+
     [Header("배경 음악")]
     [SerializeField] private Button BackGroundBtn;
     [SerializeField] private Sprite MuteBackGorundSprite;
     [SerializeField] private Sprite BackGoundSprite;
 
+    [SerializeField] private Image BackGround_image;
+    [SerializeField] private Sprite BG_image;
+    [SerializeField] private Sprite BG_Muteimage;
+
     [Header("이펙트 음악")]
     [SerializeField] private Button EffectBtn;
     [SerializeField] private Sprite MuteEffectSprite;
     [SerializeField] private Sprite EffectSprite;
-    // 사용법 : sound.EffectSource.PlayOneShot(sound.PlaySound(0));
 
-    #region SoundPanel
-
+    [SerializeField] private Image EffectGround_image;
+    [SerializeField] private Sprite EF_image;
+    [SerializeField] private Sprite EF_Muteimage;
+    #endregion
+    #region 사운드 설정
     private void Start()
     {
         slider[0].value = 0;
@@ -68,6 +77,7 @@ public class SoundManager : MonoBehaviour
         if (Mute)
         {
             BackGroundBtn.image.sprite = MuteBackGorundSprite;
+            BackGround_image.sprite = BG_Muteimage;
             musicSource.volume = 0;
             BG_IsCanMute = false;
         }
@@ -75,7 +85,9 @@ public class SoundManager : MonoBehaviour
         {
             slider[index].value = stackValue[index];
             musicSource.volume = stackValue[index];
+
             BackGroundBtn.image.sprite = BackGoundSprite;
+            BackGround_image.sprite = BG_image;
             BG_IsCanMute = true;
         }
     }
@@ -84,6 +96,7 @@ public class SoundManager : MonoBehaviour
         if (Mute)
         {
             EffectBtn.image.sprite = MuteEffectSprite;
+            EffectGround_image.sprite = EF_Muteimage;
             EffectSource.volume = 0;
             EF_IsCanMute = false;
         }
@@ -91,11 +104,14 @@ public class SoundManager : MonoBehaviour
         {
             slider[index].value = stackValue[index];
             EffectSource.volume = stackValue[index];
+
             EffectBtn.image.sprite = EffectSprite;
+            EffectGround_image.sprite = EF_image;
             EF_IsCanMute = true;
         }
     }
     #endregion
+
     public AudioClip PlaySound(int index)
     {
         EffectSource.clip = cd[index];

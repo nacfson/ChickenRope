@@ -25,6 +25,9 @@ public class UiManager : MonoBehaviour
         Application.Quit();
         Debug.Log("게임나가지기");
     }
+    public void Restart()
+    {
 
+    }
 
 }
