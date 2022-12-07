@@ -20,6 +20,7 @@ public class GrapplingHook : MonoBehaviour
     private float _speed = 5f;
     private bool _upAngle;
 
+
     public LineRenderer line;
     public Transform hook;
     public Camera camera;
@@ -40,6 +41,7 @@ public class GrapplingHook : MonoBehaviour
         line.SetPosition(1, hook.position);
         line.useWorldSpace = true;
         isAttach = false;
+        line.enabled = false;
     }
 
     void Update()
@@ -50,6 +52,8 @@ public class GrapplingHook : MonoBehaviour
         SwapAngle();
         if(Input.GetKeyDown(keyCode) &&!isHookActive)
         {
+            line.enabled = true;
+
             hook.position = transform.position;
             mouseDir = _aimParent.transform.GetChild(0).position - transform.position;
             isHookActive = true;
@@ -79,22 +83,32 @@ public class GrapplingHook : MonoBehaviour
         {
             if(Input.GetKeyDown(keyCode))
             {
-                isAttach = false;
-                isHookActive = false;
-                isLineMax = false;
-                hook.GetComponent<Hookg>().joint2D.enabled = false;
-                hook.gameObject.SetActive(false);
+                RopeDead();
+                //isAttach = false;
+                //isHookActive = false;
+                //isLineMax = false;
+                //hook.GetComponent<Hookg>().joint2D.enabled = false;
+                //hook.gameObject.SetActive(false);
             }
 
         }
     }
+    public void RopeDead()
+    {
 
+            isAttach = false;
+            isHookActive = false;
+            isLineMax = false;
+            hook.GetComponent<Hookg>().joint2D.enabled = false;
+            hook.gameObject.SetActive(false);
+        
+    }
 
 
 
     public void SwapAngle()
     {
-        if(!isHookActive)
+        if(true)
         {
             if (_applyAngle <= _angleMinLimit)
             {

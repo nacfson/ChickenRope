@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ring
+  - trab
+  - Speedtrab
+  - trab2
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -12,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Hook
   - 
   - 
   - 
@@ -41,13 +45,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Back
-    uniqueID: 3698402247
-    locked: 0
-  - name: Ground
-    uniqueID: 2346533725
-    locked: 0
-  - name: Player
-    uniqueID: 297323603
     locked: 0
