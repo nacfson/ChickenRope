@@ -60,7 +60,7 @@ public class GrapplingHook : MonoBehaviour
         {
             hook.Translate(mouseDir.normalized * Time.deltaTime * 15f);
 
-            if(Vector2.Distance(transform.position,hook.position) > 5)
+            if(Vector2.Distance(transform.position,hook.position) > 12)
             {
                 isLineMax = true;
             }
