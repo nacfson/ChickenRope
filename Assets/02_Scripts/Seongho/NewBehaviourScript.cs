@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    [SerializeField] SoundManager sound;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log("WEQr");
-            sound.EffectSource.PlayOneShot(sound.PlaySound(0));
+            SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
         }
     }
 }
