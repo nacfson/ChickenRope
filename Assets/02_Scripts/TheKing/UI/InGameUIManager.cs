@@ -14,6 +14,16 @@ public class InGameUIManager : MonoBehaviour
     {
         _currentTime = 0f;
         StartCoroutine(TimerCor());
+        Player.RopeDie += DieProcess;
+    }
+
+    public void DieProcess()
+    {
+        StopCoroutine(TimerCor());
+        if(PlayerPrefs.GetFloat("BESTTIME") < _currentTime)
+        {
+            PlayerPrefs.SetFloat("BESTIME", _currentTime);
+        }
     }
 
     IEnumerator TimerCor()

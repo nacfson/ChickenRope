@@ -5,11 +5,11 @@ using UnityEngine;
 public class Hookg : MonoBehaviour
 {
     GrapplingHook grappling;
-    public DistanceJoint2D joint2D;
+    public SpringJoint2D joint2D;
     private void Start()
     {
         grappling = GameObject.Find("Player").GetComponent<GrapplingHook>();
-        joint2D = GetComponent<DistanceJoint2D>();  
+        joint2D = GetComponent<SpringJoint2D>();  
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
