@@ -61,6 +61,7 @@ public class VideoOption : MonoBehaviour
         Screen.SetResolution(resolutions[resolutionNum].width, resolutions[resolutionNum].height, screenMode);
         resolutionPanel.SetActive(false);
     }
+
     public void OpenresolutionPanel()
     {
         resolutionPanel.SetActive(true);
