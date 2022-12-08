@@ -8,6 +8,8 @@ TagManager:
   - trab
   - Speedtrab
   - trab2
+  - Wall
+  - DieObstacle
   layers:
   - Default
   - TransparentFX
