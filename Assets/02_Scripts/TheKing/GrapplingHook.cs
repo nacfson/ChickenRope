@@ -1,6 +1,3 @@
-using System.Threading;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GrapplingHook : MonoBehaviour
@@ -19,6 +16,7 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField]
     private float _speed = 5f;
     private bool _upAngle;
+
 
     public LineRenderer line;
     public Transform hook;
@@ -40,6 +38,7 @@ public class GrapplingHook : MonoBehaviour
         line.SetPosition(1, hook.position);
         line.useWorldSpace = true;
         isAttach = false;
+        line.enabled = false;
     }
 
     void Update()
@@ -50,6 +49,8 @@ public class GrapplingHook : MonoBehaviour
         SwapAngle();
         if(Input.GetKeyDown(keyCode) &&!isHookActive)
         {
+            line.enabled = true;
+
             hook.position = transform.position;
             mouseDir = _aimParent.transform.GetChild(0).position - transform.position;
             isHookActive = true;
@@ -60,7 +61,7 @@ public class GrapplingHook : MonoBehaviour
         {
             hook.Translate(mouseDir.normalized * Time.deltaTime * 15f);
 
-            if(Vector2.Distance(transform.position,hook.position) > 5)
+            if(Vector2.Distance(transform.position,hook.position) > 12)
             {
                 isLineMax = true;
             }
@@ -79,22 +80,32 @@ public class GrapplingHook : MonoBehaviour
         {
             if(Input.GetKeyDown(keyCode))
             {
-                isAttach = false;
-                isHookActive = false;
-                isLineMax = false;
-                hook.GetComponent<Hookg>().joint2D.enabled = false;
-                hook.gameObject.SetActive(false);
+                RopeDead();
+                //isAttach = false;
+                //isHookActive = false;
+                //isLineMax = false;
+                //hook.GetComponent<Hookg>().joint2D.enabled = false;
+                //hook.gameObject.SetActive(false);
             }
 
         }
     }
+    public void RopeDead()
+    {
 
+            isAttach = false;
+            isHookActive = false;
+            isLineMax = false;
+            hook.GetComponent<Hookg>().joint2D.enabled = false;
+            hook.gameObject.SetActive(false);
+        
+    }
 
 
 
     public void SwapAngle()
     {
-        if(!isHookActive)
+        if(true)
         {
             if (_applyAngle <= _angleMinLimit)
             {
