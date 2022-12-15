@@ -8,9 +8,11 @@ public class Player : MonoBehaviour
     GrapplingHook hook;
     [SerializeField]
     private float _ropeSpeed = 3f;
-    private float _speed = 7.5f;
+    private float _speed = 1f;
     [SerializeField]
     private float _jumpPower = 2f;
+    [SerializeField]
+    private LayerMask _layerMask;
 
     public int ropeHP = 3;
 
@@ -19,7 +21,9 @@ public class Player : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
 
-    public UnityAction RopeDie;
+    private float input;
+
+    public static UnityAction RopeDie;
 
 
 
@@ -34,26 +38,27 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        input = Input.GetAxis("Horizontal");
+    }
+
+    private void FixedUpdate()
+    {
         OnMove();
     }
 
     private void ChangeRopeHealth(int plus)
     {
-        Debug.Log("ChangeRopeHealthStarted");
         ropeHP += plus;
-        Debug.Log(ropeHP);
         if(ropeHP <= 0)
         {
-            Debug.Log("RopeDieInvoke");
             RopeDie?.Invoke();
         }
 
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Ring"))
+        if(other.gameObject.CompareTag("Ring")&& hook.isAttach)
         {
-            Debug.Log("TriggerStarted");
             ChangeRopeHealth(-1);
         }
     }
@@ -62,22 +67,20 @@ public class Player : MonoBehaviour
 
     public void OnMove()
     {
-        float input = Input.GetAxis("Horizontal");
         if(Mathf.Abs(input) >0)
         {
             if (hook.isAttach)
             {
-                    _rigid.AddForce(new Vector2(input * _ropeSpeed, _rigid.velocity.y).normalized);
-                //_rigid.velocity = new Vector2((_rigid.velocity.x + input * _speed / 100),_rigid.velocity.y).normalized;
-                Debug.Log("Attach");
-
+                Vector2 ropeVec = Vector2.right * input * _ropeSpeed;
+                ropeVec.y = _ropeSpeed;
+                _rigid.AddForce(ropeVec);
             }
-            else
+            else if(CheckGround())
             {
-                Debug.Log("RUN");
-                    _rigid.AddForce(Vector2.right * input * _speed);
-                    //_rigid.velocity = new Vector2((_rigid.velocity.x + input * _speed / 100),_rigid.velocity.y).normalized;
+               _rigid.MovePosition(transform.position + (Vector3.right * _speed * input * Time.fixedDeltaTime));
             }
+            
+            
             FlipCharacter(input);
         }
 
@@ -103,7 +106,17 @@ public class Player : MonoBehaviour
     }
     public void OnJump()
     {
-        Debug.Log("Jump");
-        _rigid.AddForce(Vector3.up * _jumpPower );   
+        if(CheckGround())
+        {
+            _rigid.AddForce(Vector3.up * _jumpPower);   
+        }
+    }
+
+    public bool CheckGround()
+    {
+        bool grounded = Physics2D.Raycast(transform.position,Vector2.down, 0.5f,_layerMask);
+        Debug.Log(grounded);
+        Debug.DrawRay(transform.position, Vector2.down, Color.blue, 0.2f);
+        return grounded;
     }
 }
