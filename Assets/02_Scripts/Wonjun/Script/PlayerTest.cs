@@ -42,10 +42,8 @@ public class PlayerTest : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _rigid.gravityScale = 1;
         
 
-        _rigid.simulated = false; 
     }
 
     // Update is called once per frame
