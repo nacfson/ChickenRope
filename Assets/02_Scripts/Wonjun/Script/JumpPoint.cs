@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class JumpPoint : MonoBehaviour
-{
-    public PlayerTest _player;
-
-    private void Start()
-    {
-
-    }
+{ 
     // Start is called before the first frame update
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerTest>().jumpCount += 1;
+            collision.collider.gameObject.GetComponent<Player>().Jump();
             Destroy(gameObject);
         }
     }
