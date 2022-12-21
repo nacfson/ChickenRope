@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager Instance;
     public AudioSource musicSource;
     public AudioSource EffectSource;
 
-    public AudioClip[] cd; // 사용법 : sound.EffectSource.PlayOneShot(sound.PlaySound(0))ㅋㅋㅋㅋ시기다른;
+    public AudioClip[] cd; // 사용법 :SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+
 
 
     #region 사운드 이미지 설정
@@ -38,6 +40,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private Sprite EF_Muteimage;
     #endregion
     #region 사운드 설정
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         slider[0].value = 0;
