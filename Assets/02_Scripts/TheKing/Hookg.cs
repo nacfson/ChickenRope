@@ -18,6 +18,7 @@ public class Hookg : MonoBehaviour
             Debug.Log("Success");
             joint2D.enabled = true;
             grappling.isAttach = true;
+            Debug.Log("");
         }
     }
 }
