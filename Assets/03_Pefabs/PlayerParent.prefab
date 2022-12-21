@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6175294585145674360}
   - component: {fileID: 6175294585145674367}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 6965341698828659300}
   - component: {fileID: 6965341698828659299}
   - component: {fileID: 6965341698828659298}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 6965341699299492455}
   - component: {fileID: 6965341699299492452}
   - component: {fileID: 6175294586300833413}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Hook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 6965341699494854203}
   - component: {fileID: 6965341699494854202}
   - component: {fileID: 6175294586062186437}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -864,7 +864,6 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 0
-  _maxSpeedValue: 5
   ropeHP: 3
 --- !u!95 &6175294586062186437
 Animator:
@@ -894,7 +893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6965341699687886748}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6965341700647488519}
   - component: {fileID: 6965341700647488518}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
