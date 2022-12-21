@@ -71,9 +71,9 @@ public class Player : MonoBehaviour
     {
         if(Mathf.Abs(input) >0)
         {
-            if (hook.isAttach)
+            if (true)
             {
-                _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * 0.1f, -_maxSpeed, _maxSpeed), _rigid.velocity.y);
+                _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * 0.2f, -_maxSpeed, _maxSpeed), _rigid.velocity.y);
             }
 
 
