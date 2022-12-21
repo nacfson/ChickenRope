@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 279932550}
   - component: {fileID: 279932549}
   - component: {fileID: 279932548}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tilemap (2)
   m_TagString: Ring
   m_Icon: {fileID: 0}
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 1821722206}
   - component: {fileID: 1821722205}
   - component: {fileID: 1821722204}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Tilemap (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,5 +1463,13 @@ PrefabInstance:
       propertyPath: joint2D
       value: 
       objectReference: {fileID: 99651539876253699, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
+    - target: {fileID: 6965341699299492455, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965341699494854202, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
+      propertyPath: _layerMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}

@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private float _jumpPower = 2f;
     [SerializeField]
     private LayerMask _layerMask;
+    [SerializeField]
+    private float _maxSpeed = 5f;
 
     public int ropeHP = 3;
 
@@ -71,16 +73,10 @@ public class Player : MonoBehaviour
         {
             if (hook.isAttach)
             {
-                Vector2 ropeVec = Vector2.right * input * _ropeSpeed;
-                ropeVec.y = _ropeSpeed;
-                _rigid.AddForce(ropeVec);
+                _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * 0.1f, -_maxSpeed, _maxSpeed), _rigid.velocity.y);
             }
-            else if(CheckGround())
-            {
-               _rigid.MovePosition(transform.position + (Vector3.right * _speed * input * Time.fixedDeltaTime));
-            }
-            
-            
+
+
             FlipCharacter(input);
         }
     }
