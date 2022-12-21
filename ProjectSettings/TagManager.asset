@@ -7,15 +7,18 @@ TagManager:
   - trab
   - Speedtrab
   - trab2
+  - RIng
+  - Ring
+  - Rand
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - rand
-  - 
+  - Obstacle
   - 
   - 
   - 
