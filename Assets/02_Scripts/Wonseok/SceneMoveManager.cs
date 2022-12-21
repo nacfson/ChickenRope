@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneMoveManager : MonoBehaviour
 {
+   
     public void MoveStage01()
     {
         Debug.Log("Move to Stage01 Scene");

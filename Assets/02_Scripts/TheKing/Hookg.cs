@@ -11,10 +11,9 @@ public class Hookg : MonoBehaviour
         grappling = GameObject.Find("Player").GetComponent<GrapplingHook>();
         joint2D = GetComponent<DistanceJoint2D>();  
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.CompareTag("Ring"))
+        if (collision.gameObject.CompareTag("Ring"))
         {
             Debug.Log("Success");
             joint2D.enabled = true;
