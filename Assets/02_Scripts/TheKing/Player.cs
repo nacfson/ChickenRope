@@ -69,18 +69,7 @@ public class Player : MonoBehaviour
     {
         if(Mathf.Abs(input) >0)
         {
-            if (hook.isAttach)
-            {
-                Vector2 ropeVec = Vector2.right * input * _ropeSpeed;
-                ropeVec.y = _ropeSpeed;
-                _rigid.AddForce(ropeVec);
-            }
-            else if(CheckGround())
-            {
-               _rigid.MovePosition(transform.position + (Vector3.right * _speed * input * Time.fixedDeltaTime));
-            }
-            
-            
+            _rigid.velocity = new Vector2(_rigid.velocity.x + input * _speed * 0.2f,_rigid.velocity.y);
             FlipCharacter(input);
         }
     }
