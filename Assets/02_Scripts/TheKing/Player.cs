@@ -83,9 +83,6 @@ public class Player : MonoBehaviour
             
             FlipCharacter(input);
         }
-
-
-        
     }
     void FlipCharacter(float x)
     {
