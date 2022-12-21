@@ -43,7 +43,8 @@ public class PlayerTest : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _rigid.gravityScale = 1;
+        
+
     }
 
     // Update is called once per frame
@@ -69,6 +70,8 @@ public class PlayerTest : MonoBehaviour
             jumpCount--;
             StartCoroutine(Jump());
         }
+
+        
 
         if (x < 0)
         {

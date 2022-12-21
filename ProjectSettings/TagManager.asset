@@ -4,22 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ring
   - trab
   - Speedtrab
   - trab2
-  - Wall
-  - DieObstacle
+  - RIng
+  - Ring
+  - Rand
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - Player
-  - Hook
+  - rand
   - Obstacle
+  - Hook
   - 
   - 
   - 
