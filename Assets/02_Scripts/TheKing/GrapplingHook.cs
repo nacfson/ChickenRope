@@ -17,7 +17,6 @@ public class GrapplingHook : MonoBehaviour
     private float _speed = 5f;
     private bool _upAngle;
 
-
     public LineRenderer line;
     public Transform hook;
     public Camera camera;
@@ -93,11 +92,11 @@ public class GrapplingHook : MonoBehaviour
     public void RopeDead()
     {
 
-            isAttach = false;
-            isHookActive = false;
-            isLineMax = false;
-            hook.GetComponent<Hookg>().joint2D.enabled = false;
-            hook.gameObject.SetActive(false);
+        isAttach = false;
+        isHookActive = false;
+        isLineMax = false;
+        hook.GetComponent<Hookg>().joint2D.enabled = false;
+        hook.gameObject.SetActive(false);
         
     }
 
