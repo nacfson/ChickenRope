@@ -3,31 +3,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
+
+[System.Serializable]
 public class SaveData
 {
     public Vector2 playerPos;
+    public int SceneIndex;
 }
 
 public class SaveJson : MonoBehaviour
 {
-    private SaveData _saveData;
-    private string _savePath;
-    private string _saveFileName ="/SaveFile.txt";
-    private Transform _player;
-    void Awake()
+    private SaveData saveData;
+    private string savePath;
+    private string saveFileName ="/SaveTxt.txt";
+    private Player player;
+    void Awake() 
     {
-        _saveData = new SaveData();
-        //_saveData = Application.dataPath + "/SaveData/";
-        if(!Directory.Exists(_savePath))
+        saveData = new SaveData();
+        savePath = Application.dataPath + "/SaveData/";
+        player = FindObjectOfType<Player>();
+
+        if(!Directory.Exists(savePath))
         {
-            Directory.CreateDirectory(_savePath);
+            Directory.CreateDirectory(savePath);
         }
     }
-
     public void Save()
     {
-        //_player = GameObject
-        string json = JsonUtility.ToJson(_saveData);
-        File.WriteAllText(_savePath + _saveFileName , json);
+        saveData.playerPos = player.transform.position;
+        saveData.SceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        string json = JsonUtility.ToJson(saveData);
+        File.WriteAllText(savePath + saveFileName , json);
+        Debug.Log("저장 완료");
+    }
+    public void Load()
+    {
+        if (!File.Exists(savePath))
+        {
+            string loadJson = File.ReadAllText(savePath + saveFileName);
+            saveData = JsonUtility.FromJson<SaveData>(loadJson);
+            player.transform.position = saveData.playerPos;
+        }
     }
 }

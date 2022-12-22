@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+    public GameObject settingPannel;
     public static SoundManager Instance;
     public AudioSource musicSource;
     public AudioSource EffectSource;
@@ -117,7 +119,18 @@ public class SoundManager : MonoBehaviour
         }
     }
     #endregion
-
+    public void Cancel()
+    {
+        settingPannel.SetActive(false);
+    }
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void Exit()
+    {
+        Application.Quit();
+    }
     public AudioClip PlaySound(int index)
     {
         EffectSource.clip = cd[index];
