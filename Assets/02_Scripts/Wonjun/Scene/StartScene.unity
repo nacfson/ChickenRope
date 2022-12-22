@@ -997,6 +997,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  saveSceneIndex: 0
   panel: {fileID: 973921844}
 --- !u!4 &746600519
 Transform:
