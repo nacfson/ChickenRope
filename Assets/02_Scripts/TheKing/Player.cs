@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D _rigid;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
+    private CameraShake _cameraShake;
 
     private float input;
 
@@ -37,12 +38,14 @@ public class Player : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
         hook = GetComponent<GrapplingHook>();
+        _cameraShake = GetComponentInChildren<CameraShake>();
         RopeDie += hook.RopeDead;
     }
 
     void Update()
     {
         input = Input.GetAxis("Horizontal");
+        Debug.Log(_rigid.velocity.y);
     }
 
     private void FixedUpdate()
@@ -115,9 +118,11 @@ public class Player : MonoBehaviour
     public bool CheckGround()
     {
         bool grounded = Physics2D.Raycast(transform.position,Vector2.down, 0.5f,_layerMask);
-        Debug.Log(grounded);
-        Debug.DrawRay(transform.position, Vector2.down, Color.blue, 0.2f);
-        jumpCount = 0;
+        if(_rigid.velocity.y <= -0.3f && grounded)
+        {
+            Debug.Log("CameraShake");
+            _cameraShake.CrashShake();
+        }
         return grounded;
     }
 }

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/Main/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/01_Scenes/TheKing/InGameUI.unity
+    guid: 3d739be1798f7444c98a708d190fed20
   m_configObjects: {}
