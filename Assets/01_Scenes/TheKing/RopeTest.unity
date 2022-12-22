@@ -741,24 +741,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1136656417 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6175294586440084760, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
-  m_PrefabInstance: {fileID: 6175294585986288859}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1136656420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136656417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a24b8a0bfe5d94abbd58f9a8ea66e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  realCamera: {fileID: 0}
 --- !u!1 &1562535991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,22 +1533,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6175294585633093493, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.072648525
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175294585633093493, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.6782135
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175294585804605210, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
-      propertyPath: m_ScreenX
-      value: 0.569875
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175294585804605210, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
-      propertyPath: m_ScreenY
-      value: 0.7311481
-      objectReference: {fileID: 0}
     - target: {fileID: 6175294586230006342, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1614,14 +1580,6 @@ PrefabInstance:
     - target: {fileID: 6175294586230006343, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: m_Name
       value: PlayerParent
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175294586440084766, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.072648525
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175294586440084766, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.6782135
       objectReference: {fileID: 0}
     - target: {fileID: 6965341699299492452, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: joint2D
