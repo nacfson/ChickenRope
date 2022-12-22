@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private LayerMask _layerMask;
     [SerializeField]
-    private float _maxSpeed = 5f;
+    private float _maxSpeedValue;
 
     public int ropeHP = 3;
 
@@ -71,12 +72,7 @@ public class Player : MonoBehaviour
     {
         if(Mathf.Abs(input) >0)
         {
-            if (true)
-            {
-                _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * 0.2f, -_maxSpeed, _maxSpeed), _rigid.velocity.y);
-            }
-
-
+            _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * _speed * 0.2f,-_maxSpeedValue, _maxSpeedValue),_rigid.velocity.y);
             FlipCharacter(input);
         }
     }
