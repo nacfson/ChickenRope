@@ -20,8 +20,7 @@ public class Hookg : MonoBehaviour
             Debug.Log("Success");
             joint2D.enabled = true;
             grappling.isAttach = true;
-
-            joint2D.distance = Vector2.Distance(collision.gameObject.transform.position,player.transform.position) - 5f;
+            joint2D.distance = Vector2.Distance(player.transform.position, collision.gameObject.transform.position) - 5f;
              
         }
     }
