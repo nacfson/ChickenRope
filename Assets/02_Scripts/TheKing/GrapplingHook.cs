@@ -49,6 +49,7 @@ public class GrapplingHook : MonoBehaviour
         SwapAngle();
         if(Input.GetKeyDown(keyCode) &&!isHookActive)
         {
+            //SoundManager.Instance.PlaySound(0);
             line.enabled = true;
 
             hook.position = transform.position;
