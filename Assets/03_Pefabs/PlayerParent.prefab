@@ -505,7 +505,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -646,6 +646,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joint2D: {fileID: 0}
+  player: {fileID: 0}
+  _pullValue: 3
 --- !u!231 &6175294586300833413
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -662,8 +664,8 @@ SpringJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 3.4592156
+  m_AutoConfigureDistance: 0
+  m_Distance: 5
   m_DampingRatio: 0
   m_Frequency: 0.7
 --- !u!1 &6965341699494854177
@@ -866,6 +868,7 @@ MonoBehaviour:
     m_Bits: 128
   _maxSpeed: 5
   ropeHP: 3
+  jumpCount: 0
 --- !u!95 &6175294586062186437
 Animator:
   serializedVersion: 3
@@ -987,8 +990,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300002, guid: b92c2c26ebd072944bb67d1be7f6475e, type: 3}
+  m_Color: {r: 0.048508644, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

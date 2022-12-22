@@ -26,11 +26,13 @@ public class Player : MonoBehaviour
     private float input;
 
     public static UnityAction RopeDie;
+    public int jumpCount;
 
 
 
     private void Awake()
     {
+        jumpCount = 1;
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
@@ -61,7 +63,7 @@ public class Player : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Ring")&& hook.isAttach)
         {
-            ChangeRopeHealth(-1);
+            //ChangeRopeHealth(-1);
         }
     }
 
@@ -101,8 +103,13 @@ public class Player : MonoBehaviour
     {
         if(CheckGround())
         {
-            _rigid.AddForce(Vector3.up * _jumpPower);   
+            _rigid.AddForce(Vector3.up * _jumpPower);
+            jumpCount--;
         }
+    }
+    public void Jump()
+    {
+        _rigid.AddForce(Vector3.up * _jumpPower);
     }
 
     public bool CheckGround()
@@ -110,6 +117,7 @@ public class Player : MonoBehaviour
         bool grounded = Physics2D.Raycast(transform.position,Vector2.down, 0.5f,_layerMask);
         Debug.Log(grounded);
         Debug.DrawRay(transform.position, Vector2.down, Color.blue, 0.2f);
+        jumpCount = 0;
         return grounded;
     }
 }
