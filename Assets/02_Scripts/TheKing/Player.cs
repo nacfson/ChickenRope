@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Ring")&& hook.isAttach)
         {
-            ChangeRopeHealth(-1);
+            //ChangeRopeHealth(-1);
         }
     }
 
