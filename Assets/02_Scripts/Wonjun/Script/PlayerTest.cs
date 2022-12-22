@@ -61,9 +61,7 @@ public class PlayerTest : MonoBehaviour
         }
 
 
-        float x = Input.GetAxisRaw("Horizontal");
-        Vector3 dir = new Vector3(x, 0, 0);
-        _rigid.AddForce(Vector3.right * x * Speed * Time.deltaTime, ForceMode2D.Impulse);
+        
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount >=1 && below == true)
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, 10f);
@@ -73,22 +71,7 @@ public class PlayerTest : MonoBehaviour
 
         
 
-        if (x < 0)
-        {
-            //¿ÞÂÊ
-            sp.flipX = false;
-            pAnimation.SetBool("run", true);
-        }
-        else if (x > 0)
-        {
-            //¿À¸¥ÂÊ
-            sp.flipX = true;
-            pAnimation.SetBool("run", true);
-        }
-        else
-        {
-            pAnimation.SetBool("run", false);
-        }
+       
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
