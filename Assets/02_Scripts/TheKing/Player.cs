@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private LayerMask _layerMask;
     [SerializeField]
-    private float _maxSpeedValue;
+    private float _maxSpeed = 5f;
 
     public int ropeHP = 3;
 
@@ -27,11 +26,13 @@ public class Player : MonoBehaviour
     private float input;
 
     public static UnityAction RopeDie;
+    public int jumpCount;
 
 
 
     private void Awake()
     {
+        jumpCount = 1;
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
@@ -72,7 +73,12 @@ public class Player : MonoBehaviour
     {
         if(Mathf.Abs(input) >0)
         {
-            _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * _speed * 0.2f,-_maxSpeedValue, _maxSpeedValue),_rigid.velocity.y);
+            if (true)
+            {
+                _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * 0.2f, -_maxSpeed, _maxSpeed), _rigid.velocity.y);
+            }
+
+
             FlipCharacter(input);
         }
     }
@@ -97,8 +103,13 @@ public class Player : MonoBehaviour
     {
         if(CheckGround())
         {
-            _rigid.AddForce(Vector3.up * _jumpPower);   
+            _rigid.AddForce(Vector3.up * _jumpPower);
+            jumpCount--;
         }
+    }
+    public void Jump()
+    {
+        _rigid.AddForce(Vector3.up * _jumpPower);
     }
 
     public bool CheckGround()
@@ -106,6 +117,7 @@ public class Player : MonoBehaviour
         bool grounded = Physics2D.Raycast(transform.position,Vector2.down, 0.5f,_layerMask);
         Debug.Log(grounded);
         Debug.DrawRay(transform.position, Vector2.down, Color.blue, 0.2f);
+        jumpCount = 0;
         return grounded;
     }
 }
