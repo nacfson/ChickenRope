@@ -12,7 +12,7 @@ public class ReBack : MonoBehaviour
 
     private void Start()
     {
-        _player = GameObject.Find("testPlayer").GetComponent<PlayerTest>();
+        _player = GameObject.Find("Player").GetComponent<PlayerTest>();
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {

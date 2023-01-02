@@ -9,7 +9,7 @@ public class PlayerTest : MonoBehaviour
     SpriteRenderer sp;
 
 
-    private ReBack reback;
+    [SerializeField] private ReBack reback;
     [SerializeField] private bool back;
 
     private BoxCollider2D _boxcol;
