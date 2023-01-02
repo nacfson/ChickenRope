@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour
 
 
 
+
     #region 사운드 이미지 설정
     public bool BG_IsCanMute = true;
     public bool EF_IsCanMute = true;
@@ -41,6 +42,12 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private Sprite EF_image;
     [SerializeField] private Sprite EF_Muteimage;
     #endregion
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            settingPannel.SetActive(!settingPannel.activeInHierarchy);
+
+    }
     #region 사운드 설정
     private void Awake()
     {
@@ -53,22 +60,22 @@ public class SoundManager : MonoBehaviour
         musicSource.volume = 0;
         EffectSource.volume = 0;
     }
-    public void SetMusicVolume(int index)
+    public void SetMusicVolume()
     {
         BackGroundBtn.image.sprite = BackGoundSprite;
         BG_IsCanMute = true;
 
-        stackValue[index] = slider[index].value;
-        musicSource.volume = stackValue[index];
+        stackValue[0] = slider[0].value;
+        musicSource.volume = stackValue[0];
 
     }
-    public void SetSoundEffect(int index)
+    public void SetSoundEffect()
     {
         EffectBtn.image.sprite = EffectSprite;
         EF_IsCanMute = true;
 
-        EffectSource.volume = slider[index].value;
-        stackValue[index] = slider[index].value;
+        EffectSource.volume = slider[1].value;
+        stackValue[1] = slider[1].value;
 
     }
     public void MuteBackGroundSound()
@@ -119,10 +126,12 @@ public class SoundManager : MonoBehaviour
         }
     }
     #endregion
+   
     public void Cancel()
     {
         settingPannel.SetActive(false);
     }
+    
     public void Replay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

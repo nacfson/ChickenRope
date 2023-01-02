@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-    public static UiManager Instance;
+   // public static UiManager Instance;
     public UnityEvent<bool> OnResultData;
 
 
@@ -31,12 +31,12 @@ public class UiManager : MonoBehaviour
             saveSceneIndex = saveData.SceneIndex;
         }
 
-        if (Instance == null)
+       /* if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(this);
         }
-        else Destroy(gameObject);
+        else Destroy(gameObject);*/
 
         OnResultData?.Invoke(File.Exists(Application.dataPath + "/SaveData/SaveTxt.txt"));
 

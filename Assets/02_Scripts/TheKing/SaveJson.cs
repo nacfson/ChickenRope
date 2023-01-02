@@ -16,27 +16,31 @@ public class SaveJson : MonoBehaviour
 {
     private SaveData saveData;
     private string savePath;
-    private string saveFileName ="/SaveTxt.txt";
+    private string saveFileName = "/SaveTxt.txt";
     private Player player;
-    void Awake() 
+    void Awake()
     {
         saveData = new SaveData();
         savePath = Application.dataPath + "/SaveData/";
-        player = FindObjectOfType<Player>();
 
-        if(!Directory.Exists(savePath))
+        if (!Directory.Exists(savePath))
         {
             Directory.CreateDirectory(savePath);
         }
     }
     public void Save()
     {
-        saveData.playerPos = player.transform.position;
-        saveData.SceneIndex = SceneManager.GetActiveScene().buildIndex;
+        try
+        {
+            player = FindObjectOfType<Player>();
+            saveData.playerPos = player.transform.position;
+            saveData.SceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        string json = JsonUtility.ToJson(saveData);
-        File.WriteAllText(savePath + saveFileName , json);
-        Debug.Log("저장 완료");
+            string json = JsonUtility.ToJson(saveData);
+            File.WriteAllText(savePath + saveFileName, json);
+            Debug.Log("저장 완료");
+        }
+        catch { Debug.Log("저장 할 수 없습니다."); }
     }
     public void Load()
     {
