@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public string clearIndexName = "CLEARINDEX";
     public static UnityAction ClearAction;
-
+    public bool CanMoveNextScene = false;
 
     private void Awake()
     {
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (CanMoveNextScene)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
