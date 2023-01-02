@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         input = Input.GetAxis("Horizontal");
-        Debug.Log(_rigid.velocity.y);
+        //Debug.Log(_rigid.velocity.y);
     }
 
     private void FixedUpdate()
