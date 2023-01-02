@@ -7002,15 +7002,15 @@ MonoBehaviour:
   - {fileID: 1530003077}
   - {fileID: 650902999}
   BackGroundBtn: {fileID: 339944870}
-  MuteBackGorundSprite: {fileID: 3512311580555345830, guid: cb03943d2b98185479cc13be13a1839b, type: 3}
+  MuteBackGorundSprite: {fileID: 4354597444368450274, guid: cb03943d2b98185479cc13be13a1839b, type: 3}
   BackGoundSprite: {fileID: 6492108914554317044, guid: cb03943d2b98185479cc13be13a1839b, type: 3}
-  BackGround_image: {fileID: 339944869}
+  BackGround_image: {fileID: 860825330}
   BG_image: {fileID: 21300000, guid: 77cdcac1d027ee246bd4291e1f6839cd, type: 3}
   BG_Muteimage: {fileID: 21300000, guid: 86afeafd89f138e46ba67f091dbb0996, type: 3}
   EffectBtn: {fileID: 229531438}
-  MuteEffectSprite: {fileID: 3512311580555345830, guid: cb03943d2b98185479cc13be13a1839b, type: 3}
+  MuteEffectSprite: {fileID: 4354597444368450274, guid: cb03943d2b98185479cc13be13a1839b, type: 3}
   EffectSprite: {fileID: 6492108914554317044, guid: cb03943d2b98185479cc13be13a1839b, type: 3}
-  EffectGround_image: {fileID: 229531435}
+  EffectGround_image: {fileID: 364628338}
   EF_image: {fileID: 21300000, guid: eedf88c08cafff04cbb81be513549fff, type: 3}
   EF_Muteimage: {fileID: 21300000, guid: 0aa1ff6e316fd814489d154730c66a91, type: 3}
 --- !u!1 &1971326396

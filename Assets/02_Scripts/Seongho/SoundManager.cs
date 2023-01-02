@@ -26,19 +26,23 @@ public class SoundManager : MonoBehaviour
 
     [Header("πË∞Ê ¿Ωæ«")]
     [SerializeField] private Button BackGroundBtn;
+
     [SerializeField] private Sprite MuteBackGorundSprite;
     [SerializeField] private Sprite BackGoundSprite;
 
     [SerializeField] private Image BackGround_image;
+
     [SerializeField] private Sprite BG_image;
     [SerializeField] private Sprite BG_Muteimage;
 
     [Header("¿Ã∆Â∆Æ ¿Ωæ«")]
     [SerializeField] private Button EffectBtn;
+
     [SerializeField] private Sprite MuteEffectSprite;
     [SerializeField] private Sprite EffectSprite;
 
     [SerializeField] private Image EffectGround_image;
+
     [SerializeField] private Sprite EF_image;
     [SerializeField] private Sprite EF_Muteimage;
     #endregion
