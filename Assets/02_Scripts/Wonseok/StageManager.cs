@@ -7,10 +7,10 @@ using TMPro;
 public class StageManager : MonoBehaviour
 {
     [System.Serializable]
-    public class MapDataProperty
+    public class LevelDataProperty
     {
-        public Sprite mapSprite;
-        public string mapName;
+        public Sprite levelSprite;
+        public string levelName;
     }
     [SerializeField] Button previousButton;
     [SerializeField] Button nextButton;
@@ -19,13 +19,32 @@ public class StageManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI stageName;
     [SerializeField] SceneMoveManager sceneManager;
 
-    public List<MapDataProperty> mapData; 
+    public List<LevelDataProperty> mapData; 
 
     public int currentPage;
+    public int definitionInt = 2;
 
     private void Start()
     {
+        PlayerPrefs.SetInt(GameManager.Instance.clearIndexName,1);
         UpdateUI();
+    }
+
+    private void Update()
+    {
+        SetStartButton();
+    }
+
+    public void SetStartButton()
+    {
+        if(currentPage <= PlayerPrefs.GetInt(GameManager.Instance.clearIndexName) - definitionInt)
+        {
+            startButton.enabled = true;
+        }
+        else
+        {
+            startButton.enabled = false;
+        }
     }
 
     public void OnClickStart()
@@ -58,8 +77,8 @@ public class StageManager : MonoBehaviour
 
     public void UpdateContents()
     {
-        stageImage.sprite = mapData[currentPage].mapSprite;
-        stageName.text = mapData[currentPage].mapName;
+        stageImage.sprite = mapData[currentPage].levelSprite;
+        stageName.text = mapData[currentPage].levelName;
     }
 
     public void OnClickPrevious()
