@@ -21,7 +21,7 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (false)
         {
             CrashShake();
         }
@@ -43,6 +43,7 @@ public class CameraShake : MonoBehaviour
         }
     }
 
+    [ContextMenu("dd")]
     public void CrashShake()
     {
         ShakeAmplitude = 2f;
