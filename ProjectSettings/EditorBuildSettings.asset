@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/02_Scripts/Wonjun/Scene/StartScene.unity
+    path: Assets/Scene/StartScene.unity
     guid: 2809812f7a488cd46b075d61260f7c4e
   - enabled: 1
     path: Assets/01_Scenes/Wonseok/Wonseok.unity

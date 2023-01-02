@@ -50,7 +50,8 @@ public class SoundManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             settingPannel.SetActive(!settingPannel.activeInHierarchy);
-
+        if (settingPannel.activeInHierarchy == true) Time.timeScale = 0;
+        else if (settingPannel.activeInHierarchy == false) Time.timeScale = 1;
     }
     #region 사운드 설정
     private void Awake()
@@ -130,12 +131,12 @@ public class SoundManager : MonoBehaviour
         }
     }
     #endregion
-   
+
     public void Cancel()
     {
         settingPannel.SetActive(false);
     }
-    
+
     public void Replay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
