@@ -6,118 +6,66 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance;
     public AudioSource musicSource;
     public AudioSource EffectSource;
+    public AudioClip[] cd;
 
-    public AudioClip[] cd; // 사용법 :SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+    Stack<float>[] stack;
 
-
-
-    #region 사운드 이미지 설정
     public bool BG_IsCanMute = true;
     public bool EF_IsCanMute = true;
-
-    public float[] stackValue = new float[2];
-    public Slider[] slider = new Slider[2];
 
     [Header("배경 음악")]
     [SerializeField] private Button BackGroundBtn;
     [SerializeField] private Sprite MuteBackGorundSprite;
     [SerializeField] private Sprite BackGoundSprite;
 
-    [SerializeField] private Image BackGround_image;
-    [SerializeField] private Sprite BG_image;
-    [SerializeField] private Sprite BG_Muteimage;
-
     [Header("이펙트 음악")]
     [SerializeField] private Button EffectBtn;
     [SerializeField] private Sprite MuteEffectSprite;
     [SerializeField] private Sprite EffectSprite;
+    // 사용법 : sound.EffectSource.PlayOneShot(sound.PlaySound(0));
 
-    [SerializeField] private Image EffectGround_image;
-    [SerializeField] private Sprite EF_image;
-    [SerializeField] private Sprite EF_Muteimage;
-    #endregion
-    #region 사운드 설정
-    private void Awake()
+    #region SoundPanel
+    public void SetMusicVolume(float volume)
     {
-        Instance = this;
+        musicSource.volume = volume;
+        stack[0].Push(volume);
     }
-    private void Start()
+    public void SetSoundEffect(float volume)
     {
-        slider[0].value = 0;
-        slider[1].value = 0;
-        musicSource.volume = 0;
-        EffectSource.volume = 0;
-    }
-    public void SetMusicVolume(int index)
-    {
-        BackGroundBtn.image.sprite = BackGoundSprite;
-        BG_IsCanMute = true;
-
-        stackValue[index] = slider[index].value;
-        musicSource.volume = stackValue[index];
-
-    }
-    public void SetSoundEffect(int index)
-    {
-        EffectBtn.image.sprite = EffectSprite;
-        EF_IsCanMute = true;
-
-        EffectSource.volume = slider[index].value;
-        stackValue[index] = slider[index].value;
-
+        EffectSource.volume = volume;
+        stack[1].Push(volume);
     }
     public void MuteBackGroundSound()
     {
-        SetCanMute_BackGound(BG_IsCanMute, 0);
+        SetCanMute(ref BG_IsCanMute, 0, musicSource, MuteBackGorundSprite, BackGoundSprite, BackGroundBtn);
     }
 
     public void MuteEffectSound()
     {
-        SetCanMute_Effect(EF_IsCanMute, 1);
+        SetCanMute(ref EF_IsCanMute, 1, EffectSource, MuteEffectSprite, EffectSprite, EffectBtn);
     }
-    public void SetCanMute_BackGound(bool Mute, int index)
+    public void SetCanMute(ref bool Mute, int index, AudioSource audioSource, Sprite MuteSprite, Sprite sprite, Button button)
     {
         if (Mute)
         {
-            BackGroundBtn.image.sprite = MuteBackGorundSprite;
-            BackGround_image.sprite = BG_Muteimage;
-            musicSource.volume = 0;
-            BG_IsCanMute = false;
+            button.image.sprite = MuteSprite;
+            //audioSource.Pause();
+
+            audioSource.volume = 0;
+            Mute = false;
         }
         else if (!Mute)
         {
-            slider[index].value = stackValue[index];
-            musicSource.volume = stackValue[index];
+            button.image.sprite = sprite;
+            //audioSource.UnPause();
 
-            BackGroundBtn.image.sprite = BackGoundSprite;
-            BackGround_image.sprite = BG_image;
-            BG_IsCanMute = true;
-        }
-    }
-    public void SetCanMute_Effect(bool Mute, int index)
-    {
-        if (Mute)
-        {
-            EffectBtn.image.sprite = MuteEffectSprite;
-            EffectGround_image.sprite = EF_Muteimage;
-            EffectSource.volume = 0;
-            EF_IsCanMute = false;
-        }
-        else if (!Mute)
-        {
-            slider[index].value = stackValue[index];
-            EffectSource.volume = stackValue[index];
-
-            EffectBtn.image.sprite = EffectSprite;
-            EffectGround_image.sprite = EF_image;
-            EF_IsCanMute = true;
+            audioSource.volume = stack[index].Pop();
+            Mute = true;
         }
     }
     #endregion
-
     public AudioClip PlaySound(int index)
     {
         EffectSource.clip = cd[index];
