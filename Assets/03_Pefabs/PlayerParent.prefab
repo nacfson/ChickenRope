@@ -101,7 +101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6175294585633093488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12820482, y: 1.6967317, z: -10}
+  m_LocalPosition: {x: -0.12820482, y: 1.6967312, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6965341699494854205}
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 6175294586062186437}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -946,7 +946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6965341700647488519}
   - component: {fileID: 6965341700647488518}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
