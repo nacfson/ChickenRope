@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 6175294585633093495}
   - component: {fileID: 6175294585633093492}
   - component: {fileID: 6175294585633093483}
+  - component: {fileID: 2291358522266934595}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -224,6 +225,22 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &2291358522266934595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175294585633093488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24a9255d4c60b846b1b7394bf9739ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShakeDuration: 1.75
+  ShakeAmplitude: 0
+  ShakeFrequency: 0
+  VirtualCamera: {fileID: 6175294586440084767}
 --- !u!1 &6175294585804605284
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,21 +301,21 @@ MonoBehaviour:
   m_LookaheadTime: 0.774
   m_LookaheadSmoothing: 18.4
   m_LookaheadIgnoreY: 0
-  m_XDamping: 2.39
-  m_YDamping: 2.08
-  m_ZDamping: 3.06
+  m_XDamping: 0.77
+  m_YDamping: 0.79
+  m_ZDamping: 1.04
   m_TargetMovementOnly: 1
   m_ScreenX: 0.573
-  m_ScreenY: 0.733
+  m_ScreenY: 0.7329999
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.445
-  m_DeadZoneHeight: 0.614
+  m_DeadZoneWidth: 0.254
+  m_DeadZoneHeight: 0.385
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.557
   m_SoftZoneHeight: 0.725
   m_BiasX: 0
-  m_BiasY: -0.008003669
+  m_BiasY: -0.008004202
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 0
@@ -368,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6175294586440084760}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12820482, y: 1.6967317, z: -10}
+  m_LocalPosition: {x: -0.12820482, y: 1.6967312, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6175294585804605211}
@@ -990,8 +1007,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: b92c2c26ebd072944bb67d1be7f6475e, type: 3}
-  m_Color: {r: 0.048508644, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
