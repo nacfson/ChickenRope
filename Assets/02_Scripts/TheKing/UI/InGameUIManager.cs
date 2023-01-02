@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InGameUIManager : MonoBehaviour
 {
@@ -18,11 +19,14 @@ public class InGameUIManager : MonoBehaviour
         StartCoroutine(TimerCor());
         Player.RopeDie += DieProcess;
         GameManager.Instance.ClearAction += StopTimer;
+        GameManager.Instance.LoadSceneAction += StartTimer;
     }
 
     public void DieProcess()
     {
         StopCoroutine(TimerCor());
+
+
         if(PlayerPrefs.GetFloat("BESTTIME") < _currentTime)
         {
             PlayerPrefs.SetFloat("BESTTIME", _currentTime);

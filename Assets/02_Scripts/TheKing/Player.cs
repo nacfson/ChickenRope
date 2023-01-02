@@ -1,4 +1,3 @@
-using System.Numerics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,12 +42,20 @@ public class Player : MonoBehaviour
         RopeDie += hook.RopeDead;
     }
 
+    public void Start()
+    {
+        GameManager.Instance.ClearAction += ClearGame;
+    }
+
     void Update()
     {
         input = Input.GetAxis("Horizontal");
         //Debug.Log(_rigid.velocity.y);
     }
-
+    public void ClearGame()
+    {
+        StartCoroutine(ClearGameCor());
+    }
     private void FixedUpdate()
     {
         OnMove();
@@ -129,6 +136,8 @@ public class Player : MonoBehaviour
 
     IEnumerator ClearGameCor()
     {
-        
+        _rigid.Sleep();
+        yield return new WaitForSeconds(3f);
+        _rigid.WakeUp();
     }
 }

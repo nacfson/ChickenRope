@@ -13,10 +13,10 @@ public class ClearObject : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.Instance.SaveClearScene();
-            Debug.Log("Clear!!");
-            Instantiate(_clearPrefab,collision.gameObject.transform);
+            Vector2 transform = new Vector2(collision.transform.position.x, collision.transform.position.y - 0.5f);
+            GameObject obj = Instantiate(_clearPrefab,collision.gameObject.transform);
+            obj.transform.position = transform;
             GameManager.Instance.ClearAction?.Invoke();
-            Debug.Log("SpawnedClearPrefab");
         }
     }
 }
