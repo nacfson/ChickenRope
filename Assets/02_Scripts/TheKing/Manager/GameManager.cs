@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public string clearIndexName = "CLEARINDEX";
-    public static UnityAction ClearAction;
+    public UnityAction ClearAction;
 
 
     private void Awake()
@@ -24,7 +24,10 @@ public class GameManager : MonoBehaviour
 
     public void SaveClearScene()
     {
-        PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex);
+        if(PlayerPrefs.GetInt(clearIndexName) < SceneManager.GetActiveScene().buildIndex)
+        {
+            PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public int LoadClearScene()

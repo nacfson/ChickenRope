@@ -1,3 +1,4 @@
+using System.Numerics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -70,7 +71,7 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    
 
     public void OnMove()
     {
@@ -124,5 +125,10 @@ public class Player : MonoBehaviour
             _cameraShake.CrashShake();
         }
         return grounded;
+    }
+
+    IEnumerator ClearGameCor()
+    {
+        
     }
 }

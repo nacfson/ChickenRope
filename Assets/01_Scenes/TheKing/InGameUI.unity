@@ -387,6 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerText: {fileID: 476507642}
+  _topUI: {fileID: 1853508996}
+  canTimer: 0
 --- !u!4 &575702022
 Transform:
   m_ObjectHideFlags: 0
