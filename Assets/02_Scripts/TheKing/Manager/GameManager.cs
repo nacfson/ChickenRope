@@ -24,11 +24,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GoToMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
     public void SaveClearScene()
     {
         if(PlayerPrefs.GetInt(clearIndexName) < SceneManager.GetActiveScene().buildIndex)
@@ -41,12 +36,18 @@ public class GameManager : MonoBehaviour
     {
         return PlayerPrefs.GetInt(clearIndexName);
     }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     [ContextMenu("LoadNextScene")]
     public void LoadNextScene()
     {
         SaveClearScene();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        UIScenes();
+        SceneManager.LoadScene("InGameUI",LoadSceneMode.Additive);
+        UISceneLoad();
         //AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         //while(!operation.isDone)
         //{
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("LoadAction");
     }
 
-    public void UIScenes()
+    public void UISceneLoad()
     {
         SceneManager.LoadScene("InGameUI", LoadSceneMode.Additive);
         SceneManager.LoadScene("ClearPanel", LoadSceneMode.Additive);
