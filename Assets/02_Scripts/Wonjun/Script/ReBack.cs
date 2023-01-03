@@ -26,7 +26,8 @@ public class ReBack : MonoBehaviour
         if (collision.CompareTag("Player") &&isStop)
         {
             Rigidbody2D rigid = collision.gameObject.GetComponent<Rigidbody2D>();
-            StartCoroutine(trabCol(rigid));
+        anim.SetTrigger("trabcl");
+            StartCoroutine(TrabCol(rigid));
             
             isStop = false;
         }
@@ -34,21 +35,23 @@ public class ReBack : MonoBehaviour
     public void trab1()
     {
         player.transform.localPosition = new Vector3(0, 0, 0);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
-    IEnumerator trabCol(Rigidbody2D rigid)
+    IEnumerator TrabCol(Rigidbody2D rigid)
     {
-        Vector2  vec = rigid.velocity;
+        Vector2 vec = rigid.velocity;
         rigid.velocity = Vector2.zero;
         Debug.Log("dd");
-        yield return new WaitForSeconds(2f);
-        rigid.WakeUp();
+        rigid.gameObject.GetComponent<Player>().canMove = false;
+        yield return new WaitForSeconds(1.5f);
+        Debug.Log(rigid.gameObject.GetComponent<Player>().canMove);
+        rigid.gameObject.GetComponent<Player>().canMove = true;
         rigid.velocity = vec;
         _player.Back = true;
         _player.returntime = 0;
         Backpos = transform.position;
-        anim.SetTrigger("trabcl");
+        trab1();
 
     }
 }

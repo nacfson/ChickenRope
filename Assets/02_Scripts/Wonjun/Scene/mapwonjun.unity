@@ -7791,6 +7791,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &501453283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 501453285}
+  - component: {fileID: 501453284}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &501453284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501453283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe21d2835b3c2e4c8689534ca6c593d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearIndexName: CLEARINDEX
+--- !u!4 &501453285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501453283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.1711235, y: 46.68076, z: -5.8695917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &618488096
 GameObject:
   m_ObjectHideFlags: 0
@@ -68311,6 +68355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint2D: {fileID: 0}
   player: {fileID: 0}
+  _pullValue: 0
 --- !u!50 &6965341698943105485
 Rigidbody2D:
   serializedVersion: 4
@@ -68610,6 +68655,7 @@ MonoBehaviour:
   _maxSpeed: 5
   ropeHP: 3
   jumpCount: 0
+  canMove: 0
 --- !u!114 &6965341699817424275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68821,7 +68867,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &6965341700860508079
