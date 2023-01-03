@@ -17,27 +17,27 @@ public class SceneMoveManager : MonoBehaviour
     public void MoveStage02()
     {
         Debug.Log("Move to Stage02 Scene");
-        SceneManager.LoadScene("Stage01");
+        SceneManager.LoadScene("Stage02");
         StageStart();
     }
     public void MoveStage03()
     {
         Debug.Log("Move to Stage03 Scene");
-        SceneManager.LoadScene("Stage01");
+        SceneManager.LoadScene("Stage03");
         StageStart();
     }
     public void MoveStage04()
     {
         Debug.Log("Move to Stage04 Scene");
-        SceneManager.LoadScene("Stage01");
+        SceneManager.LoadScene("Stage04");
         StageStart();
     }
 
-    public void MoveStage(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-        StageStart();
-    }
+    //public void MoveStage(string sceneName)
+    //{
+    //    SceneManager.LoadScene(sceneName);
+    //    StageStart();
+    //}
 
     public void StageStart()
     {
