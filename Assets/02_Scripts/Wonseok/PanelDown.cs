@@ -5,32 +5,28 @@ using DG.Tweening;
 
 public class PanelDown : MonoBehaviour
 {
-    public Vector3 originPos;
     public void PanelMove()
     {
+        Invoke("DelayMove", 3f);
+    }
+    void DelayMove()
+    {
         transform.DOMoveY(550, 1f);
-        //transform.position = originPos;
-    }
 
-    public void InvokePanelMove()
-    {
-        Invoke("PanelMove", 2.5f);
     }
-
-    private void Start()
+    private void Awake()
     {
-        //PanelMove(); 
-        originPos = transform.position;
-        GameManager.Instance.ClearAction += InvokePanelMove;
+        GameManager.Instance.ClearAction += PanelMove;
     }
 
     public void MenuButton()
     {
-        //메뉴로 가는 버튼
+        GameManager.Instance.GoToMainMenu();
     }
 
     public void NextStageButton()
     {
+        GameManager.Instance.LoadNextScene();
         //다음 스테이지로 가는 버튼
     }
 }

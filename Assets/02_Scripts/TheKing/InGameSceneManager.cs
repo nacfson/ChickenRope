@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class InGameSceneManager : MonoBehaviour
 {
-    public void Start()
+    void Start()
     {
-        //GameUIScene();
+        GameUIScene();
     }
+
     public void GameUIScene()
     {
-        SceneManager.LoadScene("InGameUI",LoadSceneMode.Additive);
-        GameManager.Instance.UISceneLoad();
+        GameManager.Instance.UIScenes();
     }
 
 }

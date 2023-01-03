@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
 
     public static UnityAction RopeDie;
     public int jumpCount;
-    public bool canMove;
 
 
 
@@ -41,8 +40,6 @@ public class Player : MonoBehaviour
         hook = GetComponent<GrapplingHook>();
         _cameraShake = GetComponentInChildren<CameraShake>();
         RopeDie += hook.RopeDead;
-        canMove = true;
-        GameManager.Instance.ClearAction += ClearGame;
     }
 
     public void Start()
@@ -87,7 +84,7 @@ public class Player : MonoBehaviour
     {
         if(Mathf.Abs(input) >0)
         {
-            if (canMove)
+            if (true)
             {
                 _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * 0.2f, -_maxSpeed, _maxSpeed), _rigid.velocity.y);
             }
