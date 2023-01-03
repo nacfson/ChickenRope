@@ -26,11 +26,12 @@ public class PanelDown : MonoBehaviour
 
     public void MenuButton()
     {
-        //메뉴로 가는 버튼
+        GameManager.Instance.GoToMainMenu();
     }
 
     public void NextStageButton()
     {
         //다음 스테이지로 가는 버튼
+        GameManager.Instance.LoadNextScene();
     }
 }
