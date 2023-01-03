@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private LayerMask _layerMask;
     [SerializeField]
-    private float _maxSpeedValue;
+    private float _maxSpeed = 5f;
 
     public int ropeHP = 3;
 
@@ -29,6 +28,7 @@ public class Player : MonoBehaviour
 
     public static UnityAction RopeDie;
     public int jumpCount;
+    public bool canMove;
 
 
 
@@ -41,6 +41,13 @@ public class Player : MonoBehaviour
         hook = GetComponent<GrapplingHook>();
         _cameraShake = GetComponentInChildren<CameraShake>();
         RopeDie += hook.RopeDead;
+        canMove = true;
+        GameManager.Instance.ClearAction += ClearGame;
+    }
+
+    public void Start()
+    {
+        GameManager.Instance.ClearAction += ClearGame;
     }
 
     void Update()
@@ -48,7 +55,10 @@ public class Player : MonoBehaviour
         input = Input.GetAxis("Horizontal");
         //Debug.Log(_rigid.velocity.y);
     }
-
+    public void ClearGame()
+    {
+        StartCoroutine(ClearGameCor());
+    }
     private void FixedUpdate()
     {
         OnMove();
@@ -71,13 +81,18 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    
 
     public void OnMove()
     {
         if(Mathf.Abs(input) >0)
         {
-            _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * _speed * 0.2f,-_maxSpeedValue, _maxSpeedValue),_rigid.velocity.y);
+            if (canMove)
+            {
+                _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * 0.2f, -_maxSpeed, _maxSpeed), _rigid.velocity.y);
+            }
+
+
             FlipCharacter(input);
         }
     }
@@ -120,5 +135,12 @@ public class Player : MonoBehaviour
             _cameraShake.CrashShake();
         }
         return grounded;
+    }
+
+    IEnumerator ClearGameCor()
+    {
+        _rigid.Sleep();
+        yield return new WaitForSeconds(3f);
+        _rigid.WakeUp();
     }
 }
