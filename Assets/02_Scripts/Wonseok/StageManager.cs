@@ -62,25 +62,25 @@ public class StageManager : MonoBehaviour
 
     public void OnClickStart()
     {
-        string path = SceneUtility.GetScenePathByBuildIndex(currentPage + definitionInt + 1);
-        string name = System.IO.Path.GetFileNameWithoutExtension(path);
-
-        //if(currentPage == 0)
-        //{
-        //    _sceneManager.MoveStage01();
-        //}
-        //if (currentPage == 1)
-        //{
-        //    _sceneManager.MoveStage02();
-        //}
-        //if (currentPage == 2)
-        //{
-        //    _sceneManager.MoveStage03();
-        //}
-        //if (currentPage == 3)
-        //{
-        //    _sceneManager.MoveStage04();
-        //}
+        //string path = SceneUtility.GetScenePathByBuildIndex(currentPage + definitionInt + 1);
+        //string name = System.IO.Path.GetFileNameWithoutExtension(path);
+        //_sceneManager.MoveStage(name);
+        if(currentPage == 0)
+        {
+            _sceneManager.MoveStage01();
+        }
+        if (currentPage == 1)
+        {
+            _sceneManager.MoveStage02();
+        }
+        if (currentPage == 2)
+        {
+            _sceneManager.MoveStage03();
+        }
+        if (currentPage == 3)
+        {
+            _sceneManager.MoveStage04();
+        }
     }
 
     public void UpdateUI()

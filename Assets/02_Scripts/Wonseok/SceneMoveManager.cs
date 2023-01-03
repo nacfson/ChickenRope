@@ -2,28 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class SceneMoveManager : MonoBehaviour
 {
-    public Scene stage_Scene;
+   
     public void MoveStage01()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("Move to Stage01 Scene");
+        SceneManager.LoadScene("RopeTest");
+        StageStart();
     }
 
     public void MoveStage02()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Debug.Log("Move to Stage02 Scene");
+        SceneManager.LoadScene("Stage02");
+        StageStart();
     }
     public void MoveStage03()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Debug.Log("Move to Stage03 Scene");
+        SceneManager.LoadScene("Stage03");
+        StageStart();
     }
     public void MoveStage04()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Debug.Log("Move to Stage04 Scene");
+        SceneManager.LoadScene("Stage04");
+        StageStart();
+    }
+
+    //public void MoveStage(string sceneName)
+    //{
+    //    SceneManager.LoadScene(sceneName);
+    //    StageStart();
+    //}
+
+    public void StageStart()
+    {
+        SceneManager.LoadScene("InGameUI", LoadSceneMode.Additive);
+        SceneManager.LoadScene("ClearPanel", LoadSceneMode.Additive);
     }
 }
