@@ -64,7 +64,7 @@ public class StageManager : MonoBehaviour
     {
         string path = SceneUtility.GetScenePathByBuildIndex(currentPage + definitionInt + 1);
         string name = System.IO.Path.GetFileNameWithoutExtension(path);
-        _sceneManager.MoveStage(name);
+
         //if(currentPage == 0)
         //{
         //    _sceneManager.MoveStage01();
