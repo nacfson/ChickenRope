@@ -39,10 +39,10 @@ public class GrapplingHook : MonoBehaviour
     {
         //line = GetComponentInChildren<LineRenderer>();
 
-        shotbackground = GameObject.Find("ShotBackground");
-        shottext = GameObject.Find("ShotText");
-        shottext.SetActive(false);
-        shotbackground.SetActive(false);
+        //shotbackground = GameObject.Find("ShotBackground");
+        //shottext = GameObject.Find("ShotText");
+        //shottext.SetActive(false);
+        //shotbackground.SetActive(false);
         line.positionCount = 2;
         line.endWidth = line.startWidth = 0.05f;
         line.SetPosition(0, transform.position);
@@ -64,7 +64,7 @@ public class GrapplingHook : MonoBehaviour
         if(Input.GetKeyDown(keyCode) &&!isHookActive)
         {
             Debug.Log("shoot");
-            StartCoroutine(Shottext());
+            //StartCoroutine(Shottext());
             line.enabled = true;
             hook.position = transform.position;
             mouseDir = _aimParent.transform.GetChild(0).position - transform.position;
