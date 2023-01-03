@@ -14,6 +14,6 @@ public class JumpFloor : MonoBehaviour
             Rigidbody2D rigid = hit.collider.GetComponent<Rigidbody2D>();
             rigid.AddForce(Vector2.up * JumpPower, ForceMode2D.Impulse);
         }
-        Debug.DrawRay(transform.position, Vector2.up,Color.red ,1);
+        //Debug.DrawRay(transform.position, Vector2.up,Color.red ,1);
     }
 }
