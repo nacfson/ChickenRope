@@ -1,4 +1,8 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GrapplingHook : MonoBehaviour
 {
@@ -17,7 +21,6 @@ public class GrapplingHook : MonoBehaviour
     private float _speed = 5f;
     private bool _upAngle;
 
-
     public LineRenderer line;
     public Transform hook;
     public Camera camera;
@@ -26,12 +29,20 @@ public class GrapplingHook : MonoBehaviour
     public Vector3 mouseDir;
     public bool isAttach;
 
+    [SerializeField]
+    private GameObject shottext;
+    [SerializeField]
+    private GameObject shotbackground;
+
 
     void Start()
     {
         //line = GetComponentInChildren<LineRenderer>();
 
-
+        shotbackground = GameObject.Find("ShotBackground");
+        shottext = GameObject.Find("ShotText");
+        shottext.SetActive(false);
+        shotbackground.SetActive(false);
         line.positionCount = 2;
         line.endWidth = line.startWidth = 0.05f;
         line.SetPosition(0, transform.position);
@@ -49,7 +60,8 @@ public class GrapplingHook : MonoBehaviour
         SwapAngle();
         if(Input.GetKeyDown(keyCode) &&!isHookActive)
         {
-            //SoundManager.Instance.PlaySound(0);
+            Debug.Log("shoot");
+            StartCoroutine(Shottext());
             line.enabled = true;
 
             hook.position = transform.position;
@@ -94,12 +106,23 @@ public class GrapplingHook : MonoBehaviour
     public void RopeDead()
     {
 
-            isAttach = false;
-            isHookActive = false;
-            isLineMax = false;
-            hook.GetComponent<Hookg>().joint2D.enabled = false;
-            hook.gameObject.SetActive(false);
+        isAttach = false;
+        isHookActive = false;
+        isLineMax = false;
+        hook.GetComponent<Hookg>().joint2D.enabled = false;
+        hook.gameObject.SetActive(false);
         
+    }
+
+    IEnumerator Shottext()
+    {
+        //shottext.transform.position = transform.position;
+
+        shottext.SetActive(true);
+        shotbackground.SetActive(true);
+        yield return new WaitForSeconds(1);
+        shottext.SetActive(false);
+        shotbackground.SetActive(false);
     }
 
 
