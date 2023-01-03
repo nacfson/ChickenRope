@@ -14,7 +14,7 @@ public class trab2Collider : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameObject.Find("trab 2").GetComponent<Rigidbody2D>().gravityScale = 1;
+            GameObject.Find("trab2").GetComponent<Rigidbody2D>().gravityScale = 1;
         }
     }
 }
