@@ -337,6 +337,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Scene/Stage02.unity
 <<<<<<<< HEAD:Assets/Scene/Stage02.unity
 --- !u!1001 &1368733146
 PrefabInstance:
@@ -395,6 +396,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6445a05ba455b3f44820870b9f430963, type: 3}
+=======
+>>>>>>> parent of b209645 (dd):Assets/02_Scripts/Wonjun/Scene/mapwonjun.unity
 --- !u!1 &1739015984
 ========
 --- !u!1 &1106123257
