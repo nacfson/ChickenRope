@@ -36,16 +36,18 @@ public class GameManager : MonoBehaviour
     {
         return PlayerPrefs.GetInt(clearIndexName);
     }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     [ContextMenu("LoadNextScene")]
     public void LoadNextScene()
     {
         SaveClearScene();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-<<<<<<< Updated upstream
         SceneManager.LoadScene("InGameUI",LoadSceneMode.Additive);
-=======
         UISceneLoad();
->>>>>>> Stashed changes
         //AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         //while(!operation.isDone)
         //{
@@ -54,13 +56,10 @@ public class GameManager : MonoBehaviour
         LoadSceneAction?.Invoke();
         Debug.Log("LoadAction");
     }
-<<<<<<< Updated upstream
-=======
 
     public void UISceneLoad()
     {
         SceneManager.LoadScene("InGameUI", LoadSceneMode.Additive);
         SceneManager.LoadScene("ClearPanel", LoadSceneMode.Additive);
     }
->>>>>>> Stashed changes
 }

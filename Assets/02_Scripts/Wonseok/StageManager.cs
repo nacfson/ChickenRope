@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour
 {
     [System.Serializable]
-    public class MapDataProperty
+    public class LevelDataProperty
     {
-        public Sprite mapSprite;
-        public string mapName;
+        public Sprite levelSprite;
+        public string levelName;
     }
     [SerializeField] Button _previousButton;
     [SerializeField] Button _nextButton;
@@ -19,17 +20,13 @@ public class StageManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _stageName;
     [SerializeField] SceneMoveManager _sceneManager;
 
-    public List<MapDataProperty> mapData; 
+    public List<LevelDataProperty> mapData;
 
     public int currentPage;
+    public int definitionInt = 2;
 
     private void Start()
     {
-<<<<<<< Updated upstream
-        UpdateUI();
-    }
-
-=======
         SetBuildIndex();
     }
 
@@ -53,7 +50,7 @@ public class StageManager : MonoBehaviour
     {
         //Debug.Log(currentPage);
         //Debug.Log(PlayerPrefs.GetInt(GameManager.Instance.clearIndexName) - definitionInt);
-        if(currentPage < PlayerPrefs.GetInt(GameManager.Instance.clearIndexName) - definitionInt)
+        if (currentPage < PlayerPrefs.GetInt(GameManager.Instance.clearIndexName) - definitionInt)
         {
             _startButton.enabled = true;
         }
@@ -63,11 +60,10 @@ public class StageManager : MonoBehaviour
         }
     }
 
->>>>>>> Stashed changes
     public void OnClickStart()
     {
         string path = SceneUtility.GetScenePathByBuildIndex(currentPage + definitionInt + 1);
-        string name = System.IO.Path.GetFileNameWithoutExtension(path);    
+        string name = System.IO.Path.GetFileNameWithoutExtension(path);
         _sceneManager.MoveStage(name);
         //if(currentPage == 0)
         //{
@@ -97,13 +93,8 @@ public class StageManager : MonoBehaviour
 
     public void UpdateContents()
     {
-<<<<<<< Updated upstream
-        stageImage.sprite = mapData[currentPage].mapSprite;
-        stageName.text = mapData[currentPage].mapName;
-=======
         _stageImage.sprite = mapData[currentPage].levelSprite;
         _stageName.text = mapData[currentPage].levelName;
->>>>>>> Stashed changes
     }
 
     public void OnClickPrevious()
