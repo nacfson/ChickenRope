@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/01_Scenes/Wonseok/ClearPanel.unity
     guid: c45f968c99ebd174a842c6954375eb28
   - enabled: 1
-    path: Assets/01_Scenes/TheKing/RopeTest.unity
-    guid: 5694de6855ced884084bffdb977655e5
+    path: Assets/01_Scenes/Mingyo/Stage01.unity
+    guid: dc4b5eed271f6d14198460c5ef7926cb
   - enabled: 1
-    path: Assets/01_Scenes/TheKing/dd.unity
-    guid: d22e306355779ba4a946594091f8f30a
+    path: Assets/02_Scripts/Wonjun/Scene/Stage02.unity
+    guid: 936c298cb4f067840983c1309fc84a2e
+  - enabled: 1
+    path: Assets/01_Scenes/Wonseok/Stage04.unity
+    guid: 77ea6adf55e1f614181df288ce9a5f5f
   m_configObjects: {}
