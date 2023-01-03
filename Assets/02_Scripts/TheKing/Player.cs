@@ -42,13 +42,9 @@ public class Player : MonoBehaviour
         _cameraShake = GetComponentInChildren<CameraShake>();
         RopeDie += hook.RopeDead;
         canMove = true;
-        //GameManager.Instance.ClearAction += ClearGame;
+        GameManager.Instance.ClearAction += ClearGame;
     }
 
-    public void Start()
-    {
-        //GameManager.Instance.ClearAction += ClearGame;
-    }
 
     void Update()
     {
