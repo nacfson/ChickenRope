@@ -139,8 +139,12 @@ public class Player : MonoBehaviour
 
     IEnumerator ClearGameCor()
     {
-        _rigid.Sleep();
+        canMove = false;
+        _rigid.gravityScale = 0f;
+
         yield return new WaitForSeconds(3f);
-        _rigid.WakeUp();
+        canMove = true;
+        _rigid.gravityScale = 1f;
+
     }
 }
