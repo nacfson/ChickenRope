@@ -641,7 +641,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 746600518}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: ExControl
+        m_MethodName: Story
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2308,7 +2308,7 @@ MonoBehaviour:
   saveSceneIndex: 0
   panel: {fileID: 973921844}
   exPanel: {fileID: 1245589549}
-  storyPanel: {fileID: 0}
+  storyPanel: {fileID: 1567453433}
 --- !u!4 &746600519
 Transform:
   m_ObjectHideFlags: 0
@@ -2761,7 +2761,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 1300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &825574873
 MonoBehaviour:
@@ -2784,11 +2784,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uB2ED\uC774 \uC591\uACC4\uC7A5\uC5D0 \uAC07\uD600 \uC788\uB2E4\uAC00
-    \uCE5C\uAD6C\uB4E4\uC774 \uB054 \uC0B4\uC744 \uB2F9\uD558\uB294 \uAC83\uC744
-    \uBAA9\uACA9\uD558\uACE0 \uC774\uACF3\uC744 \uD0C8\uCD9C\uD558\uAE30\uB85C \uB9D8\uC744
-    \uBA39\uC5B4 \uC591\uACC4\uC7A5 \uC9C0\uD558\uC5D0\uC11C \uBC1C\uACAC\uD55C \uB85C\uD504\uB97C
-    \uC0AC\uC6A9\uD558\uC5EC \uC774\uACF3\uC744 \uBE60\uC838\uB098\uAC00\uACE0\uC790
-    \uD558\uB294 \uC774\uC57C\uAE30 \uC774\uB2E4."
+    \n\uCE5C\uAD6C\uB4E4\uC774 \uB054 \uC0B4\uC744 \uB2F9\uD558\uB294 \uAC83\uC744
+    \uBAA9\uACA9\uD558\uACE0 \n\uC774\uACF3\uC744 \uD0C8\uCD9C\uD558\uAE30\uB85C
+    \uB9D8\uC744 \uBA39\uC5B4 \n\uC591\uACC4\uC7A5 \uC9C0\uD558\uC5D0\uC11C \uBC1C\uACAC\uD55C
+    \uB85C\uD504\uB97C \uC0AC\uC6A9\uD558\uC5EC \n\uC774\uACF3\uC744 \uBE60\uC838\uB098\uAC00\uACE0\uC790
+    \uD558\uB294 \uC774\uC57C\uAE30  \uC774\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99f122b52c7f0bd44a89924693382e04, type: 2}
   m_sharedMaterial: {fileID: -7828997846565401069, guid: 99f122b52c7f0bd44a89924693382e04, type: 2}
@@ -3378,7 +3378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &973921845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5105,7 +5105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1567453434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5817,7 +5817,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 746600518}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: ExControlQuit
+        m_MethodName: StoryQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
