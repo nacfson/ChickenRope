@@ -9,7 +9,7 @@ public class PlayerTest : MonoBehaviour
     SpriteRenderer sp;
 
 
-    private ReBack reback;
+    [SerializeField] private ReBack reback;
     [SerializeField] private bool back;
 
     private BoxCollider2D _boxcol;
@@ -17,7 +17,6 @@ public class PlayerTest : MonoBehaviour
     private Animator pAnimation;
 
 
-    public float Speed = 3f;
     public int jumpCount = 1;
     public float returntime = 10;
 
@@ -43,7 +42,8 @@ public class PlayerTest : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _rigid.gravityScale = 1;
+        
+
     }
 
     // Update is called once per frame
@@ -60,9 +60,7 @@ public class PlayerTest : MonoBehaviour
         }
 
 
-        float x = Input.GetAxisRaw("Horizontal");
-        Vector3 dir = new Vector3(x, 0, 0);
-        _rigid.AddForce(Vector3.right * x * Speed * Time.deltaTime, ForceMode2D.Impulse);
+        
         if (Input.GetKeyDown(KeyCode.Space) && jumpCount >=1 && below == true)
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, 10f);
@@ -70,22 +68,9 @@ public class PlayerTest : MonoBehaviour
             StartCoroutine(Jump());
         }
 
-        if (x < 0)
-        {
-            //¿ÞÂÊ
-            sp.flipX = false;
-            pAnimation.SetBool("run", true);
-        }
-        else if (x > 0)
-        {
-            //¿À¸¥ÂÊ
-            sp.flipX = true;
-            pAnimation.SetBool("run", true);
-        }
-        else
-        {
-            pAnimation.SetBool("run", false);
-        }
+        
+
+       
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
