@@ -17,7 +17,6 @@ public class PlayerTest : MonoBehaviour
     private Animator pAnimation;
 
 
-    public float Speed = 3f;
     public int jumpCount = 1;
     public float returntime = 10;
 
