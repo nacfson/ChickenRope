@@ -7,6 +7,8 @@ public class Hookg : MonoBehaviour
     GrapplingHook grappling;
     public SpringJoint2D joint2D;
     public Transform player;
+    [SerializeField]
+    private float _pullValue;
     private void Start()
     {
         grappling = GameObject.Find("Player").GetComponent<GrapplingHook>();
@@ -20,7 +22,7 @@ public class Hookg : MonoBehaviour
             Debug.Log("Success");
             joint2D.enabled = true;
             grappling.isAttach = true;
-            joint2D.distance = Vector2.Distance(player.transform.position, transform.position) - 5f;
+            joint2D.distance = Vector2.Distance(player.transform.position, transform.position) - _pullValue;
              
         }
     }
