@@ -10,7 +10,11 @@ public class InGameSceneManager : MonoBehaviour
     }
     public void GameUIScene()
     {
+<<<<<<< Updated upstream
         SceneManager.LoadScene("InGameUI",LoadSceneMode.Additive);
+=======
+        GameManager.Instance.UISceneLoad();
+>>>>>>> Stashed changes
     }
 
 }
