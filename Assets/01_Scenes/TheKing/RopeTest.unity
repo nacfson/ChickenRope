@@ -1547,7 +1547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6175294585633093493, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6967317
+      value: 1.6967312
       objectReference: {fileID: 0}
     - target: {fileID: 6175294585804605210, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: m_ScreenX
@@ -1555,7 +1555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6175294585804605210, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: m_ScreenY
-      value: 0.733
+      value: 0.7329999
       objectReference: {fileID: 0}
     - target: {fileID: 6175294586230006342, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: m_RootOrder
@@ -1615,7 +1615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6175294586440084766, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6967317
+      value: 1.6967312
       objectReference: {fileID: 0}
     - target: {fileID: 6965341698828659299, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: m_Parameters.colorGradient.key1.b
@@ -1636,6 +1636,10 @@ PrefabInstance:
     - target: {fileID: 6965341699299492455, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965341699299492457, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6965341699494854177, guid: 6aa8c3ee30a69ac4486146e5c28ef26d, type: 3}
       propertyPath: m_TagString

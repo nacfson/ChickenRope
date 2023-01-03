@@ -50,6 +50,9 @@ public class GrapplingHook : MonoBehaviour
         line.useWorldSpace = true;
         isAttach = false;
         line.enabled = false;
+
+        //hook.gameObject.SetActive(false);
+        //Debug.LogError(hook.gameObject.activeSelf + "dddd");
     }
 
     void Update()
@@ -63,7 +66,6 @@ public class GrapplingHook : MonoBehaviour
             Debug.Log("shoot");
             StartCoroutine(Shottext());
             line.enabled = true;
-
             hook.position = transform.position;
             mouseDir = _aimParent.transform.GetChild(0).position - transform.position;
             isHookActive = true;

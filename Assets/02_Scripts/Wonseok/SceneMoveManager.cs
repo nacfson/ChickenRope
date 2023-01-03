@@ -10,7 +10,7 @@ public class SceneMoveManager : MonoBehaviour
     public void MoveStage01()
     {
         Debug.Log("Move to Stage01 Scene");
-        SceneManager.LoadScene("RopeTest");
+        SceneManager.LoadScene("Stage01");
         StageStart();
     }
 
