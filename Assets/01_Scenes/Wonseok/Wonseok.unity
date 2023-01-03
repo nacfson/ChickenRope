@@ -471,6 +471,50 @@ RectTransform:
   m_AnchoredPosition: {x: -550, y: -425}
   m_SizeDelta: {x: 160, y: 189.7049}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &178562476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 178562478}
+  - component: {fileID: 178562477}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &178562477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178562476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe21d2835b3c2e4c8689534ca6c593d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearIndexName: CLEARINDEX
+--- !u!4 &178562478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178562476}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 740.27234, y: 584.7595, z: -47.883423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &353500342
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57aa72aa8b90594ca147e7ce35a239a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage_Scene:
+    m_Handle: 0
 --- !u!4 &779421752
 Transform:
   m_ObjectHideFlags: 0
@@ -1221,22 +1267,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ff27afb8e99e148a15cd067d4dd36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  previousButton: {fileID: 87133639}
-  nextButton: {fileID: 353500343}
-  startButton: {fileID: 49371691}
-  stageImage: {fileID: 923354040}
-  stageName: {fileID: 417979849}
-  sceneManager: {fileID: 779421751}
+  _previousButton: {fileID: 87133639}
+  _nextButton: {fileID: 353500343}
+  _startButton: {fileID: 49371691}
+  _stageImage: {fileID: 923354040}
+  _stageName: {fileID: 417979849}
+  _sceneManager: {fileID: 779421751}
   mapData:
-  - mapSprite: {fileID: 6827237486290818563, guid: 5181f67785f83ad44949f074e948cbac, type: 3}
-    mapName: Stage01
-  - mapSprite: {fileID: 7401597365613437681, guid: 5181f67785f83ad44949f074e948cbac, type: 3}
-    mapName: Stage02
-  - mapSprite: {fileID: -1608008311667981770, guid: 5181f67785f83ad44949f074e948cbac, type: 3}
-    mapName: Stage03
-  - mapSprite: {fileID: 7034223609390794741, guid: 5181f67785f83ad44949f074e948cbac, type: 3}
-    mapName: Stage04
+  - levelSprite: {fileID: 0}
+    levelName: 
+  - levelSprite: {fileID: 0}
+    levelName: 
+  - levelSprite: {fileID: 0}
+    levelName: 
+  - levelSprite: {fileID: 0}
+    levelName: 
   currentPage: 0
+  definitionInt: 2
 --- !u!114 &1954316131
 MonoBehaviour:
   m_ObjectHideFlags: 0

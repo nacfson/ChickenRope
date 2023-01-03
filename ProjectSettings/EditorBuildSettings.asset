@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scene/StartScene.unity
+    guid: 2809812f7a488cd46b075d61260f7c4e
+  - enabled: 1
+    path: Assets/01_Scenes/Wonseok/Wonseok.unity
+    guid: 4049c6a978675bf49b75fe4e9be608ac
+  - enabled: 1
+    path: Assets/01_Scenes/Mingyo/TileMap.unity
+    guid: dc4b5eed271f6d14198460c5ef7926cb
+  - enabled: 1
     path: Assets/01_Scenes/Main/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/01_Scenes/TheKing/InGameUI.unity
+    guid: 3d739be1798f7444c98a708d190fed20
   m_configObjects: {}
