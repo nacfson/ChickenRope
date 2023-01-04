@@ -149,7 +149,7 @@ public class SoundManager : MonoBehaviour
             GameManager.Instance.UISceneLoad();
         }
         else
-            Debug.Log("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
+            MiniTitleText.Instance.OnText("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
     }
     public void Exit()
     {

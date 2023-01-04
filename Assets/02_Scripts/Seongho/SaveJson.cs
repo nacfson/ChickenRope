@@ -38,9 +38,9 @@ public class SaveJson : MonoBehaviour
 
             string json = JsonUtility.ToJson(saveData);
             File.WriteAllText(savePath + saveFileName, json);
-            Debug.Log("저장 완료");
+            MiniTitleText.Instance.OnText("저장 완료");
         }
-        catch { Debug.Log("저장 할 수 없습니다."); }
+        catch { MiniTitleText.Instance.OnText("저장 할 수 없습니다."); }
     }
     public void Load()
     {
