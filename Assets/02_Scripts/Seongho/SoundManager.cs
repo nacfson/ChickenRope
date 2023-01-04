@@ -57,6 +57,11 @@ public class SoundManager : MonoBehaviour
     {
         Instance = this;
     }
+
+    public void SetActiveFalseSettingPanel()
+    {
+        settingPannel.SetActive(false);
+    }
     private void Start()
     {
         slider[0].value = 0;
@@ -143,17 +148,19 @@ public class SoundManager : MonoBehaviour
     public void Replay()
     {
         SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+        SetActiveFalseSettingPanel();
         if (SceneManager.GetActiveScene().buildIndex > 3)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             GameManager.Instance.UISceneLoad();
         }
         else
-            Debug.LogError("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
+            MiniTitleText.Instance.OnText("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
     }
     public void Exit()
     {
         SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+        SetActiveFalseSettingPanel();
 
         GameManager.Instance.GoToMainMenu();
     }
