@@ -7,11 +7,9 @@ public class ReBack : MonoBehaviour
     private PlayerTest _player;
     private Player _player1;
     [SerializeField] private GameObject player;
-    [SerializeField] private Vector3 backpos;
     Animator anim;
     private bool isStop;
 
-    public Vector3 Backpos { get => backpos; set => backpos = value; }
 
     private void Start()
     {
@@ -26,7 +24,7 @@ public class ReBack : MonoBehaviour
         if (collision.CompareTag("Player") && isStop)
         {
             Rigidbody2D rigid = collision.gameObject.GetComponent<Rigidbody2D>();
-            anim.SetTrigger("trabcl");
+            //anim.SetTrigger("trabcl");
             StartCoroutine(TrabCol(rigid));
 
             isStop = false;
@@ -48,9 +46,6 @@ public class ReBack : MonoBehaviour
         Debug.Log(rigid.gameObject.GetComponent<Player>().canMove);
         rigid.gameObject.GetComponent<Player>().canMove = true;
         rigid.velocity = vec;
-        _player.Back = true;
-        _player.returntime = 0;
-        Backpos = transform.position;
         trab1();
 
     }

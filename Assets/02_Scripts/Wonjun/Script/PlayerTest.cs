@@ -9,8 +9,6 @@ public class PlayerTest : MonoBehaviour
     SpriteRenderer sp;
 
 
-    [SerializeField] private ReBack reback;
-    [SerializeField] private bool back;
 
     private BoxCollider2D _boxcol;
     private Rigidbody2D _rigid;
@@ -18,15 +16,12 @@ public class PlayerTest : MonoBehaviour
 
 
     public int jumpCount = 1;
-    public float returntime = 10;
 
-    public bool Back { get => back; set => back = value; }
 
     // Start is called before the first frame update
     void Start()
     {
         sp = GetComponent<SpriteRenderer>();
-        back = false;
         _rigid = GetComponent<Rigidbody2D>();
         //reback = GameObject.Find("trab").GetComponent<ReBack>();
         _boxcol = GetComponent<BoxCollider2D>();
@@ -51,13 +46,7 @@ public class PlayerTest : MonoBehaviour
     {
         below = Physics2D.Raycast(transform.position, Vector2.down, 3f, a);
 
-         returntime += Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.R) && back == true && returntime <= 10)
-        {
-            transform.position = reback.Backpos;
-            back = false;
-            returntime = 0;
-        }
+        
 
 
         

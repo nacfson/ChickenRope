@@ -150,12 +150,13 @@ public class SoundManager : MonoBehaviour
         }
         else
             MiniTitleText.Instance.OnText("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
+            Debug.LogError("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
     }
     public void Exit()
     {
         SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
 
-        Application.Quit();
+        GameManager.Instance.GoToMainMenu();
     }
     public AudioClip PlaySound(int index)
     {
