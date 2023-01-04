@@ -82,6 +82,7 @@ public class UiManager : MonoBehaviour
     public void GameLoad()
     {
         StartCoroutine("load");
+        GameManager.Instance.UISceneLoad();
 
     }
     IEnumerator load()
@@ -93,7 +94,6 @@ public class UiManager : MonoBehaviour
         saveJson.Load();
         Destroy(gameObject);
 
-        GameManager.Instance.UISceneLoad();
     }
 
     public void Exit()// ���� ���� ȭ�翡�� ���� ������
