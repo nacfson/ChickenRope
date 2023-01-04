@@ -155,7 +155,7 @@ public class SoundManager : MonoBehaviour
     {
         SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
 
-        Application.Quit();
+        GameManager.Instance.GoToMainMenu();
     }
     public AudioClip PlaySound(int index)
     {
