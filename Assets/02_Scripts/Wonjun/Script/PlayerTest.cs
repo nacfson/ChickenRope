@@ -76,10 +76,10 @@ public class PlayerTest : MonoBehaviour
 
     IEnumerator Jump()
     {
+        sp.color = Color.white;
         pAnimation.SetBool("Jump", true);
         yield return new WaitForSeconds(1);
         pAnimation.SetBool("Jump", false);
-        sp.color = Color.white;
     }
     
 
