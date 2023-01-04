@@ -4860,7 +4860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC57C\uC57C\uC57C\uC57C"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99f122b52c7f0bd44a89924693382e04, type: 2}
   m_sharedMaterial: {fileID: -7828997846565401069, guid: 99f122b52c7f0bd44a89924693382e04, type: 2}
