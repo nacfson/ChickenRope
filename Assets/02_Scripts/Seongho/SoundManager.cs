@@ -150,7 +150,6 @@ public class SoundManager : MonoBehaviour
         }
         else
             MiniTitleText.Instance.OnText("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
-            Debug.LogError("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
     }
     public void Exit()
     {

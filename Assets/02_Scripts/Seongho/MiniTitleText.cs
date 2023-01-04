@@ -6,7 +6,7 @@ using UnityEngine;
 public class MiniTitleText : MonoBehaviour
 {
     public static MiniTitleText Instance;
-    public TextMeshProUGUI _Text;
+     TextMeshProUGUI _Text;
     Animator anim;
     private void Awake()
     {
