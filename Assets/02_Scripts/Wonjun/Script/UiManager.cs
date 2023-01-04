@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-   // public static UiManager Instance;
+    // public static UiManager Instance;
     public UnityEvent<bool> OnResultData;
 
 
@@ -17,8 +17,7 @@ public class UiManager : MonoBehaviour
     private string saveFileName = "/SaveTxt.txt";
     private SaveData saveData;
 
-    SaveJson saveJson;
-
+    [SerializeField] private SaveJson saveJson;
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject exPanel;
     [SerializeField] private GameObject storyPanel;
@@ -34,12 +33,12 @@ public class UiManager : MonoBehaviour
             saveSceneIndex = saveData.SceneIndex;
         }
 
-       /* if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else Destroy(gameObject);*/
+        /* if (Instance == null)
+         {
+             Instance = this;
+             DontDestroyOnLoad(this);
+         }
+         else Destroy(gameObject);*/
 
         OnResultData?.Invoke(File.Exists(Application.dataPath + "/SaveData/SaveTxt.txt"));
 
@@ -77,23 +76,27 @@ public class UiManager : MonoBehaviour
     {
         storyPanel.SetActive(false);
         panel.SetActive(true);
-        
+
     }
     public void GameLoad()
     {
-        StartCoroutine("load");
-        GameManager.Instance.UISceneLoad();
+
+        //StartCoroutine("load");
+        SceneManager.LoadScene(saveSceneIndex);
+        saveJson.Load();
 
     }
     IEnumerator load()
     {
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(saveSceneIndex);
-        while (!asyncOperation.isDone) yield return null;
 
-        saveJson = FindObjectOfType<SaveJson>();
+        while (asyncOperation.isDone)
+            yield return null;
+
         saveJson.Load();
-        Destroy(gameObject);
 
+        GameManager.Instance.UISceneLoad();
+        Destroy(gameObject);
     }
 
     public void Exit()// ���� ���� ȭ�翡�� ���� ������

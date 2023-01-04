@@ -17,7 +17,7 @@ public class SaveJson : MonoBehaviour
     private SaveData saveData;
     private string savePath;
     private string saveFileName = "/SaveTxt.txt";
-    private Player player;
+    public Player player;
     void Awake()
     {
         saveData = new SaveData();
@@ -34,6 +34,8 @@ public class SaveJson : MonoBehaviour
         {
             player = FindObjectOfType<Player>();
             saveData.playerPos = player.transform.position;
+            Debug.Log(player.transform.position);
+
             saveData.SceneIndex = SceneManager.GetActiveScene().buildIndex;
 
             string json = JsonUtility.ToJson(saveData);
@@ -46,6 +48,9 @@ public class SaveJson : MonoBehaviour
     {
         if (!File.Exists(savePath))
         {
+            player = FindObjectOfType<Player>();
+            Debug.Log(player.transform.position);
+
             string loadJson = File.ReadAllText(savePath + saveFileName);
             saveData = JsonUtility.FromJson<SaveData>(loadJson);
             player.transform.position = saveData.playerPos;

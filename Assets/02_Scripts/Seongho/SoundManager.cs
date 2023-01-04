@@ -55,7 +55,8 @@ public class SoundManager : MonoBehaviour
     #region 사운드 설정
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
     }
     private void Start()
     {
@@ -135,14 +136,14 @@ public class SoundManager : MonoBehaviour
 
     public void Cancel()
     {
-        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+        SoundManager.Instance.EffectSource.PlayOneShot(PlaySound(0));
 
         settingPannel.SetActive(false);
     }
 
     public void Replay()
     {
-        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+        SoundManager.Instance.EffectSource.PlayOneShot(PlaySound(0));
         if (SceneManager.GetActiveScene().buildIndex > 3)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -153,7 +154,7 @@ public class SoundManager : MonoBehaviour
     }
     public void Exit()
     {
-        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+        SoundManager.Instance.EffectSource.PlayOneShot(PlaySound(0));
 
         GameManager.Instance.GoToMainMenu();
     }
