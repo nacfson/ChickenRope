@@ -137,7 +137,6 @@ public class Player : MonoBehaviour
         canMove = false;
         _rigid.gravityScale = 0f;
         _rigid.velocity = Vector3.zero;
-
         yield return new WaitForSeconds(3f);
         canMove = true;
         _rigid.gravityScale = 1f;

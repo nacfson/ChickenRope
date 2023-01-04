@@ -16,7 +16,6 @@ public class SoundManager : MonoBehaviour
 
 
 
-
     #region 사운드 이미지 설정
     public bool BG_IsCanMute = true;
     public bool EF_IsCanMute = true;
@@ -140,6 +139,7 @@ public class SoundManager : MonoBehaviour
     public void Replay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Instance.UISceneLoad();
     }
     public void Exit()
     {
