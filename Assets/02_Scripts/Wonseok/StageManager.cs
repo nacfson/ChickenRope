@@ -25,40 +25,16 @@ public class StageManager : MonoBehaviour
     public int currentPage;
     public int definitionInt = 1;
 
-    private void Start()
-    {
-        SetBuildIndex();
-    }
 
     private void Update()
     {
-        SetStartButton();
+
         UpdateUI();
 
     }
 
-    void SetBuildIndex()
-    {
-        definitionInt = 2;
-        if (!(PlayerPrefs.GetInt(GameManager.Instance.clearIndexName) > 3))
-        {
-            PlayerPrefs.SetInt(GameManager.Instance.clearIndexName, 3);
-        }
-    }
 
-    public void SetStartButton()
-    {
-        //Debug.Log(currentPage);
-        //Debug.Log(PlayerPrefs.GetInt(GameManager.Instance.clearIndexName) - definitionInt);
-        if (currentPage < PlayerPrefs.GetInt(GameManager.Instance.clearIndexName) - definitionInt)
-        {
-            _startButton.enabled = true;
-        }
-        else
-        {
-            _startButton.enabled = false;
-        }
-    }
+
 
     public void OnClickStart()
     {
