@@ -19,6 +19,8 @@ public class UiManager : MonoBehaviour
     SaveJson saveJson;
 
     [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject exPanel;
+    [SerializeField] private GameObject storyPanel;
 
     private void Awake()
     {
@@ -50,9 +52,30 @@ public class UiManager : MonoBehaviour
     {
         panel.SetActive(true);
     }
+    public void ExControl()
+    {
+        exPanel.SetActive(true);
+        panel.SetActive(false);
+    }
+
+    public void Story()
+    {
+        storyPanel.SetActive(true);
+        panel.SetActive(false);
+    }
     public void GameExQuit()// 게임 설명 창 나가기
     {
         panel.SetActive(false);
+    }
+    public void ExControlQuit()// 게임 설명 창 나가기
+    {
+        exPanel.SetActive(false);
+        panel.SetActive(true);
+    }
+    public void StoryQuit()// 게임 설명 창 나가기
+    {
+        storyPanel.SetActive(false);
+        panel.SetActive(true);
     }
     public void GameLoad()
     {
