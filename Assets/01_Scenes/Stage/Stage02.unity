@@ -5599,7 +5599,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -43, y: 93, z: 0}
+  - first: {x: -44, y: 93, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 42
@@ -5609,7 +5609,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -42, y: 93, z: 0}
+  - first: {x: -43, y: 93, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 43
@@ -5619,7 +5619,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -41, y: 93, z: 0}
+  - first: {x: -42, y: 93, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 44
@@ -6922,14 +6922,22 @@ CompositeCollider2D:
         Y: 951875008
       - X: -460000000
         Y: 951875008
-    - - X: -400000000
-        Y: 938124992
-      - X: -430000000
-        Y: 938124992
-      - X: -430000000
-        Y: 931875008
-      - X: -400000000
-        Y: 931875008
+    - - X: -409999900
+        Y: 931874967
+      - X: -409999900
+        Y: 938125033
+      - X: -409999959
+        Y: 938125092
+      - X: -440000041
+        Y: 938125092
+      - X: -440000100
+        Y: 938125033
+      - X: -440000100
+        Y: 931874967
+      - X: -440000041
+        Y: 931874908
+      - X: -409999959
+        Y: 931874908
     - - X: -430000000
         Y: 878124992
       - X: -460000000
@@ -7383,10 +7391,10 @@ CompositeCollider2D:
       - {x: -46.00003, y: 95.8125}
       - {x: -49, y: 95.81247}
       - {x: -48.999973, y: 95.1875}
-    - - {x: -40.00003, y: 93.1875}
-      - {x: -40.00003, y: 93.8125}
-      - {x: -43, y: 93.81247}
-      - {x: -42.999973, y: 93.1875}
+    - - {x: -41.000027, y: 93.18749}
+      - {x: -41.000027, y: 93.812515}
+      - {x: -44.00001, y: 93.81248}
+      - {x: -43.999973, y: 93.18749}
     - - {x: -43.00003, y: 87.1875}
       - {x: -43.00003, y: 87.8125}
       - {x: -46, y: 87.81247}
