@@ -16,8 +16,7 @@ public class UiManager : MonoBehaviour
     public int saveSceneIndex;
     private string saveFileName = "/SaveTxt.txt";
     private SaveData saveData;
-
-    [SerializeField] private SaveJson saveJson;
+    public SaveJson saveJson;
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject exPanel;
     [SerializeField] private GameObject storyPanel;
@@ -33,15 +32,13 @@ public class UiManager : MonoBehaviour
             saveSceneIndex = saveData.SceneIndex;
         }
 
-        /* if (Instance == null)
-         {
-             Instance = this;
-             DontDestroyOnLoad(this);
-         }
-         else Destroy(gameObject);*/
 
         OnResultData?.Invoke(File.Exists(Application.dataPath + "/SaveData/SaveTxt.txt"));
 
+    }
+    private void Start()
+    {
+        saveJson = FindObjectOfType<SaveJson>();
     }
     public void GameStart()//���� ����
     {
@@ -81,9 +78,9 @@ public class UiManager : MonoBehaviour
     public void GameLoad()
     {
 
-        //StartCoroutine("load");
-        SceneManager.LoadScene(saveSceneIndex);
-        saveJson.Load();
+        StartCoroutine("load");
+        //SceneManager.LoadScene(saveSceneIndex);
+        //saveJson.Load();
 
     }
     IEnumerator load()
@@ -96,7 +93,7 @@ public class UiManager : MonoBehaviour
         saveJson.Load();
 
         GameManager.Instance.UISceneLoad();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void Exit()// ���� ���� ȭ�翡�� ���� ������

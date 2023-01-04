@@ -14,12 +14,14 @@ public class SaveData
 
 public class SaveJson : MonoBehaviour
 {
+
     private SaveData saveData;
     private string savePath;
     private string saveFileName = "/SaveTxt.txt";
-    public Player player;
+    public Transform player;
     void Awake()
     {
+
         saveData = new SaveData();
         savePath = Application.dataPath + "/SaveData/";
 
@@ -32,7 +34,7 @@ public class SaveJson : MonoBehaviour
     {
         try
         {
-            player = FindObjectOfType<Player>();
+            player = GameObject.Find("FinalPlayer").transform;
             saveData.playerPos = player.transform.position;
             Debug.Log(player.transform.position);
 
@@ -46,14 +48,16 @@ public class SaveJson : MonoBehaviour
     }
     public void Load()
     {
-        if (!File.Exists(savePath))
+        Debug.Log("123");
+        if (File.Exists(savePath + saveFileName))
         {
-            player = FindObjectOfType<Player>();
+            Debug.Log("1234");
+            player = GameObject.Find("FinalPlayer").transform;
             Debug.Log(player.transform.position);
 
             string loadJson = File.ReadAllText(savePath + saveFileName);
             saveData = JsonUtility.FromJson<SaveData>(loadJson);
-            player.transform.position = saveData.playerPos;
+            player.position = saveData.playerPos;
         }
     }
 }
