@@ -149,7 +149,7 @@ public class SoundManager : MonoBehaviour
             GameManager.Instance.UISceneLoad();
         }
         else
-            Debug.Log("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
+            Debug.LogError("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
     }
     public void Exit()
     {
