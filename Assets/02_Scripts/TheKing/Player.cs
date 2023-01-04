@@ -74,6 +74,7 @@ public class Player : MonoBehaviour
         if(other.gameObject.CompareTag("Ring")&& hook.isAttach)
         {
             //ChangeRopeHealth(-1);
+            
         }
     }
 
@@ -87,8 +88,6 @@ public class Player : MonoBehaviour
             {
                 _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * 0.2f, -_maxSpeed, _maxSpeed), _rigid.velocity.y);
             }
-
-
             FlipCharacter(input);
         }
     }
