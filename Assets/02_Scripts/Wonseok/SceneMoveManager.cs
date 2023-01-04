@@ -38,7 +38,10 @@ public class SceneMoveManager : MonoBehaviour
     //    SceneManager.LoadScene(sceneName);
     //    StageStart();
     //}
-
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("StartScene");
+    }
     public void StageStart()
     {
         SceneManager.LoadScene("InGameUI", LoadSceneMode.Additive);
