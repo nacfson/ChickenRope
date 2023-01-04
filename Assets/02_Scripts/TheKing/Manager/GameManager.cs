@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -29,15 +29,27 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator AdministatorCor()
     {
-        while(true)
+        while (true)
         {
-            if(Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P))
             {
                 AdministratorFunction();
             }
             yield return null;
         }
     }
+
+    public void Load(SaveJson s)
+    {
+        StartCoroutine(AA(s));
+    }
+
+    IEnumerator AA(SaveJson s)
+    {
+        yield return new WaitForSeconds(0.01f);
+        s.Load();
+    }
+
     private void AdministratorFunction()
     {
         _player = GameObject.Find("FinalPlayer").transform;
@@ -46,7 +58,7 @@ public class GameManager : MonoBehaviour
     }
     public void SaveClearScene()
     {
-        if(PlayerPrefs.GetInt(clearIndexName) < SceneManager.GetActiveScene().buildIndex)
+        if (PlayerPrefs.GetInt(clearIndexName) < SceneManager.GetActiveScene().buildIndex)
         {
             PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex);
         }
@@ -66,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         SaveClearScene();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("InGameUI",LoadSceneMode.Additive);
+        SceneManager.LoadScene("InGameUI", LoadSceneMode.Additive);
         UISceneLoad();
         //AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         //while(!operation.isDone)

@@ -21,6 +21,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject exPanel;
     [SerializeField] private GameObject storyPanel;
 
+
     private void Awake()
     {
         string savePath = Application.dataPath + "/SaveData/";
@@ -32,9 +33,7 @@ public class UiManager : MonoBehaviour
             saveSceneIndex = saveData.SceneIndex;
         }
 
-
         OnResultData?.Invoke(File.Exists(Application.dataPath + "/SaveData/SaveTxt.txt"));
-
     }
     private void Start()
     {
@@ -90,11 +89,13 @@ public class UiManager : MonoBehaviour
         while (asyncOperation.isDone)
             yield return null;
 
-        saveJson.Load();
+        //saveJson.Load();
+        GameManager.Instance.Load(saveJson);
 
         GameManager.Instance.UISceneLoad();
         gameObject.SetActive(false);
     }
+
 
     public void Exit()// ���� ���� ȭ�翡�� ���� ������
     {
