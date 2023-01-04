@@ -1415,11 +1415,11 @@ MonoBehaviour:
   mapData:
   - levelSprite: {fileID: 21300000, guid: e0a60fd32e308e44db851ba0bfe3a363, type: 3}
     levelName: STAGE 01
-  - levelSprite: {fileID: 0}
+  - levelSprite: {fileID: 21300000, guid: 5c5736e8eb3b0d64b92df023274a9e2d, type: 3}
     levelName: STAGE 02
   - levelSprite: {fileID: 21300000, guid: c1eec8b1c510d55469857d39875f9252, type: 3}
     levelName: STAGE 03
-  - levelSprite: {fileID: 0}
+  - levelSprite: {fileID: 21300000, guid: 5c5736e8eb3b0d64b92df023274a9e2d, type: 3}
     levelName: STAGE 04
   currentPage: 0
   definitionInt: 2
