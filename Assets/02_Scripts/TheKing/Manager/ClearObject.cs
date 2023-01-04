@@ -7,7 +7,6 @@ public class ClearObject : MonoBehaviour
 {
     [SerializeField] private GameObject _clearPrefab;
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -17,6 +16,8 @@ public class ClearObject : MonoBehaviour
             GameObject obj = Instantiate(_clearPrefab,collision.gameObject.transform);
             obj.transform.position = transform;
             GameManager.Instance.ClearAction?.Invoke();
+            
+            
         }
     }
 }
