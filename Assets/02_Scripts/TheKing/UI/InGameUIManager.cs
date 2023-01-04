@@ -6,19 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class InGameUIManager : MonoBehaviour
 {
+    public static float CurrentTime
+    {
+        get
+        {
+            return _currentTime;
+        }
+    }
+
     [SerializeField]
     private TextMeshProUGUI _timerText;
     [SerializeField]
     private GameObject _topUI;
-    private float _currentTime;
+    private static float _currentTime;
     public bool canTimer;
 
     void Awake()
     {
         StartTimer();
         StartCoroutine(TimerCor());
-        Player.RopeDie += DieProcess;
+
         GameManager.Instance.ClearAction += StopTimer;
+        GameManager.Instance.ClearAction += DieProcess;
         GameManager.Instance.LoadSceneAction += StartTimer;
     }
 

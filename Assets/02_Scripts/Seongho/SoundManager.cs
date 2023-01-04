@@ -58,6 +58,11 @@ public class SoundManager : MonoBehaviour
         if (Instance == null)
             Instance = this;
     }
+
+    public void SetActiveFalseSettingPanel()
+    {
+        settingPannel.SetActive(false);
+    }
     private void Start()
     {
         slider[0].value = 0;
@@ -144,6 +149,8 @@ public class SoundManager : MonoBehaviour
     public void Replay()
     {
         SoundManager.Instance.EffectSource.PlayOneShot(PlaySound(0));
+        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+        SetActiveFalseSettingPanel();
         if (SceneManager.GetActiveScene().buildIndex > 3)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -155,6 +162,8 @@ public class SoundManager : MonoBehaviour
     public void Exit()
     {
         SoundManager.Instance.EffectSource.PlayOneShot(PlaySound(0));
+        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+        SetActiveFalseSettingPanel();
 
         GameManager.Instance.GoToMainMenu();
     }
