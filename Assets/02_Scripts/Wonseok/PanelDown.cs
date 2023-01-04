@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+using TMPro;
 public class PanelDown : MonoBehaviour
 {
+
     public Vector3 originPos;
+    [SerializeField]
+    private TextMeshProUGUI _timerText;
     public void PanelMove()
     {
         transform.DOMoveY(550, 1f);
+        _timerText.text = $"Current Time : {InGameUIManager.CurrentTime} \n Best Time : {PlayerPrefs.GetFloat("BESTTIME")}";
         //transform.position = originPos;
     }
 

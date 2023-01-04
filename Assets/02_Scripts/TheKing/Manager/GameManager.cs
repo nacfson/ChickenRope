@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public UnityAction ClearAction;
     public UnityAction LoadSceneAction;
 
+    [SerializeField]
+    private GameObject _clearObject;
+    private Transform _player;
 
     private void Awake()
     {
@@ -22,8 +25,25 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        StartCoroutine(AdministatorCor());
     }
-
+    IEnumerator AdministatorCor()
+    {
+        while(true)
+        {
+            if(Input.GetKeyDown(KeyCode.P))
+            {
+                AdministratorFunction();
+            }
+            yield return null;
+        }
+    }
+    private void AdministratorFunction()
+    {
+        _player = GameObject.Find("FinalPlayer").transform;
+        GameObject obj = Instantiate(_clearObject);
+        obj.transform.position = _player.position;
+    }
     public void SaveClearScene()
     {
         if(PlayerPrefs.GetInt(clearIndexName) < SceneManager.GetActiveScene().buildIndex)
