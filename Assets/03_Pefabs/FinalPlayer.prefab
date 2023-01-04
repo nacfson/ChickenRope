@@ -923,10 +923,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   below: 0
-  reback: {fileID: 0}
-  back: 0
   jumpCount: 1
-  returntime: 10
 --- !u!95 &1094658145749019100
 Animator:
   serializedVersion: 3
@@ -962,10 +959,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   below: 0
-  reback: {fileID: 8413597422855303302, guid: 676d14af6c191d34f92d25d363a43eaa, type: 3}
-  back: 0
   jumpCount: 1
-  returntime: 10
 --- !u!1 &4191673826187510289
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +986,7 @@ Transform:
   m_GameObject: {fileID: 4191673826187510289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.335, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 4191673825033068933}
   m_RootOrder: 0
@@ -1037,15 +1031,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: b92c2c26ebd072944bb67d1be7f6475e, type: 3}
-  m_Color: {r: 0.048508644, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: -1266644546228486331, guid: bdd39527e99937f4f9ed48afe0c1ddce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.48, y: 3.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6521788943617017036
