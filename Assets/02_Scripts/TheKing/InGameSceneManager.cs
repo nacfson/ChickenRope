@@ -6,11 +6,12 @@ public class InGameSceneManager : MonoBehaviour
 {
     public void Start()
     {
-        GameUIScene();
+        //GameUIScene();
     }
     public void GameUIScene()
     {
         SceneManager.LoadScene("InGameUI",LoadSceneMode.Additive);
+        GameManager.Instance.UISceneLoad();
     }
 
 }

@@ -1,29 +1,100 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
+   // public static UiManager Instance;
+    public UnityEvent<bool> OnResultData;
+
+
+    public int saveSceneIndex;
+    private string saveFileName = "/SaveTxt.txt";
+    private SaveData saveData;
+
+    SaveJson saveJson;
+
     [SerializeField] private GameObject panel;
-    public void GameStart(string name)//°ÔÀÓ ½ÃÀÛ
+    [SerializeField] private GameObject exPanel;
+    [SerializeField] private GameObject storyPanel;
+
+    private void Awake()
     {
-        SceneManager.LoadScene(name);
+        string savePath = Application.dataPath + "/SaveData/";
+        saveData = new SaveData();
+        if (!File.Exists(savePath))
+        {
+            string loadJson = File.ReadAllText(savePath + saveFileName);
+            saveData = JsonUtility.FromJson<SaveData>(loadJson);
+            saveSceneIndex = saveData.SceneIndex;
+        }
+
+       /* if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else Destroy(gameObject);*/
+
+        OnResultData?.Invoke(File.Exists(Application.dataPath + "/SaveData/SaveTxt.txt"));
+
     }
-    public void GameExplain()// °ÔÀÓ ¼³¸í Ã¢ ¶ç¿ì±â
+    public void GameStart()//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void GameExplain()// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¢ ï¿½ï¿½ï¿½ï¿½
     {
         panel.SetActive(true);
     }
-    public void GameExQuit()// °ÔÀÓ ¼³¸í Ã¢ ³ª°¡±â
+    public void ExControl()
     {
+        exPanel.SetActive(true);
         panel.SetActive(false);
     }
 
-    public void Exit()// °ÔÀÓ ½ÃÀÛ È­¸ç¿¡¼­ °ÔÀÓ ³ª°¡±â
+    public void Story()
+    {
+        storyPanel.SetActive(true);
+        panel.SetActive(false);
+    }
+    public void GameExQuit()// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¢ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    {
+        panel.SetActive(false);
+    }
+    public void ExControlQuit()// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¢ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    {
+        exPanel.SetActive(false);
+        panel.SetActive(true);
+    }
+    public void StoryQuit()// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¢ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    {
+        storyPanel.SetActive(false);
+        panel.SetActive(true);
+    }
+    public void GameLoad()
+    {
+        StartCoroutine("load");
+    }
+    IEnumerator load()
+    {
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(saveSceneIndex);
+        while (!asyncOperation.isDone) yield return null;
+
+        saveJson = FindObjectOfType<SaveJson>();
+        saveJson.Load();
+        Destroy(gameObject);
+    }
+
+    public void Exit()// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È­ï¿½ç¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         Application.Quit();
-        Debug.Log("°ÔÀÓ³ª°¡Áö±â");
+        Debug.Log("ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
     public void Restart()
     {

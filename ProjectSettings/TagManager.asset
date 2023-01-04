@@ -4,24 +4,26 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Ring
   - trab
   - Speedtrab
   - trab2
-  - RIng
-  - Ring
+  - Wall
+  - DieObstacle
+  - FxTemporaire
   - Rand
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - rand
-  - Obstacle
+  - Player
   - Hook
-  - 
-  - 
+  - Obstacle
+  - DontDestroy
+  - HookCollider
   - 
   - 
   - 
@@ -46,4 +48,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: SnowBackGround
+    uniqueID: 1174151413
+    locked: 0
+  - name: SnowObstacle
+    uniqueID: 1815147235
     locked: 0

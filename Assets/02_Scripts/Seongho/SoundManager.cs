@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+    public GameObject settingPannel;
     public static SoundManager Instance;
     public AudioSource musicSource;
     public AudioSource EffectSource;
@@ -23,22 +25,33 @@ public class SoundManager : MonoBehaviour
 
     [Header("¹è°æ À½¾Ç")]
     [SerializeField] private Button BackGroundBtn;
+
     [SerializeField] private Sprite MuteBackGorundSprite;
     [SerializeField] private Sprite BackGoundSprite;
 
     [SerializeField] private Image BackGround_image;
+
     [SerializeField] private Sprite BG_image;
     [SerializeField] private Sprite BG_Muteimage;
 
     [Header("ÀÌÆåÆ® À½¾Ç")]
     [SerializeField] private Button EffectBtn;
+
     [SerializeField] private Sprite MuteEffectSprite;
     [SerializeField] private Sprite EffectSprite;
 
     [SerializeField] private Image EffectGround_image;
+
     [SerializeField] private Sprite EF_image;
     [SerializeField] private Sprite EF_Muteimage;
     #endregion
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            settingPannel.SetActive(!settingPannel.activeInHierarchy);
+        if (settingPannel.activeInHierarchy == true) Time.timeScale = 0;
+        else if (settingPannel.activeInHierarchy == false) Time.timeScale = 1;
+    }
     #region »ç¿îµå ¼³Á¤
     private void Awake()
     {
@@ -51,22 +64,22 @@ public class SoundManager : MonoBehaviour
         musicSource.volume = 0;
         EffectSource.volume = 0;
     }
-    public void SetMusicVolume(int index)
+    public void SetMusicVolume()
     {
         BackGroundBtn.image.sprite = BackGoundSprite;
         BG_IsCanMute = true;
 
-        stackValue[index] = slider[index].value;
-        musicSource.volume = stackValue[index];
+        stackValue[0] = slider[0].value;
+        musicSource.volume = stackValue[0];
 
     }
-    public void SetSoundEffect(int index)
+    public void SetSoundEffect()
     {
         EffectBtn.image.sprite = EffectSprite;
         EF_IsCanMute = true;
 
-        EffectSource.volume = slider[index].value;
-        stackValue[index] = slider[index].value;
+        EffectSource.volume = slider[1].value;
+        stackValue[1] = slider[1].value;
 
     }
     public void MuteBackGroundSound()
@@ -118,6 +131,20 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
+    public void Cancel()
+    {
+        settingPannel.SetActive(false);
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Instance.UISceneLoad();
+    }
+    public void Exit()
+    {
+        Application.Quit();
+    }
     public AudioClip PlaySound(int index)
     {
         EffectSource.clip = cd[index];

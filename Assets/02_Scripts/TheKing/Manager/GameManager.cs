@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public string clearIndexName = "CLEARINDEX";
-    public static UnityAction ClearAction;
-    public bool CanMoveNextScene = false;
+    public UnityAction ClearAction;
+    public UnityAction LoadSceneAction;
+
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         if(Instance == null)
         {
             Instance = this;
@@ -24,7 +26,10 @@ public class GameManager : MonoBehaviour
 
     public void SaveClearScene()
     {
-        PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex);
+        if(PlayerPrefs.GetInt(clearIndexName) < SceneManager.GetActiveScene().buildIndex)
+        {
+            PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public int LoadClearScene()
@@ -32,9 +37,29 @@ public class GameManager : MonoBehaviour
         return PlayerPrefs.GetInt(clearIndexName);
     }
 
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    [ContextMenu("LoadNextScene")]
     public void LoadNextScene()
     {
-        if (CanMoveNextScene)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SaveClearScene();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("InGameUI",LoadSceneMode.Additive);
+        UISceneLoad();
+        //AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        //while(!operation.isDone)
+        //{
+        //    return;
+        //}
+        LoadSceneAction?.Invoke();
+        Debug.Log("LoadAction");
+    }
+
+    public void UISceneLoad()
+    {
+        SceneManager.LoadScene("InGameUI", LoadSceneMode.Additive);
+        SceneManager.LoadScene("ClearPanel", LoadSceneMode.Additive);
     }
 }

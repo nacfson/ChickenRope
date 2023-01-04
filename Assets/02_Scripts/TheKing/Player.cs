@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
 
     public static UnityAction RopeDie;
     public int jumpCount;
+    public bool canMove;
 
 
 
@@ -40,14 +41,20 @@ public class Player : MonoBehaviour
         hook = GetComponent<GrapplingHook>();
         _cameraShake = GetComponentInChildren<CameraShake>();
         RopeDie += hook.RopeDead;
+        canMove = true;
+        GameManager.Instance.ClearAction += ClearGame;
     }
+
 
     void Update()
     {
         input = Input.GetAxis("Horizontal");
         //Debug.Log(_rigid.velocity.y);
     }
-
+    public void ClearGame()
+    {
+        StartCoroutine(ClearGameCor());
+    }
     private void FixedUpdate()
     {
         OnMove();
@@ -67,21 +74,20 @@ public class Player : MonoBehaviour
         if(other.gameObject.CompareTag("Ring")&& hook.isAttach)
         {
             //ChangeRopeHealth(-1);
+            
         }
     }
 
-
+    
 
     public void OnMove()
     {
         if(Mathf.Abs(input) >0)
         {
-            if (true)
+            if (canMove)
             {
                 _rigid.velocity = new Vector2(Mathf.Clamp(_rigid.velocity.x + input * 0.2f, -_maxSpeed, _maxSpeed), _rigid.velocity.y);
             }
-
-
             FlipCharacter(input);
         }
     }
@@ -124,5 +130,16 @@ public class Player : MonoBehaviour
             _cameraShake.CrashShake();
         }
         return grounded;
+    }
+
+    IEnumerator ClearGameCor()
+    {
+        canMove = false;
+        _rigid.gravityScale = 0f;
+        _rigid.velocity = Vector3.zero;
+        yield return new WaitForSeconds(3f);
+        canMove = true;
+        _rigid.gravityScale = 1f;
+
     }
 }
