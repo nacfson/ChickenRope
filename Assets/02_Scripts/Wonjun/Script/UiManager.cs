@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -76,6 +77,7 @@ public class UiManager : MonoBehaviour
     {
         storyPanel.SetActive(false);
         panel.SetActive(true);
+        
     }
     public void GameLoad()
     {
