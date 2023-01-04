@@ -6,7 +6,7 @@ public class PlayerTest : MonoBehaviour
 {
     public LayerMask a;
     public bool below;
-    SpriteRenderer sp;
+    public SpriteRenderer sp;
 
 
 
@@ -76,6 +76,7 @@ public class PlayerTest : MonoBehaviour
 
     IEnumerator Jump()
     {
+        sp.color = Color.white;
         pAnimation.SetBool("Jump", true);
         yield return new WaitForSeconds(1);
         pAnimation.SetBool("Jump", false);

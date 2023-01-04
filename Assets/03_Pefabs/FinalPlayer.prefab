@@ -496,7 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joint2D: {fileID: 0}
   player: {fileID: 0}
-  _pullValue: 0
+  _pullValue: 2.5
 --- !u!231 &1094658146583974044
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -922,6 +922,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   below: 0
+  sp: {fileID: 0}
   jumpCount: 0
 --- !u!95 &1094658145749019100
 Animator:
