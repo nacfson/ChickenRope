@@ -43,12 +43,12 @@ public class UiManager : MonoBehaviour
         OnResultData?.Invoke(File.Exists(Application.dataPath + "/SaveData/SaveTxt.txt"));
 
     }
-    public void GameStart()//°ÔÀÓ ½ÃÀÛ
+    public void GameStart()//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Debug.Log(SceneManager.GetActiveScene().buildIndex);
     }
-    public void GameExplain()// °ÔÀÓ ¼³¸í Ã¢ ¶ç¿ì±â
+    public void GameExplain()// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¢ ï¿½ï¿½ï¿½ï¿½
     {
         panel.SetActive(true);
     }
@@ -63,16 +63,16 @@ public class UiManager : MonoBehaviour
         storyPanel.SetActive(true);
         panel.SetActive(false);
     }
-    public void GameExQuit()// °ÔÀÓ ¼³¸í Ã¢ ³ª°¡±â
+    public void GameExQuit()// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¢ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         panel.SetActive(false);
     }
-    public void ExControlQuit()// °ÔÀÓ ¼³¸í Ã¢ ³ª°¡±â
+    public void ExControlQuit()// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¢ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         exPanel.SetActive(false);
         panel.SetActive(true);
     }
-    public void StoryQuit()// °ÔÀÓ ¼³¸í Ã¢ ³ª°¡±â
+    public void StoryQuit()// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¢ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         storyPanel.SetActive(false);
         panel.SetActive(true);
@@ -91,10 +91,10 @@ public class UiManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Exit()// °ÔÀÓ ½ÃÀÛ È­¸ç¿¡¼­ °ÔÀÓ ³ª°¡±â
+    public void Exit()// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È­ï¿½ç¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         Application.Quit();
-        Debug.Log("°ÔÀÓ³ª°¡Áö±â");
+        Debug.Log("ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
     public void Restart()
     {
