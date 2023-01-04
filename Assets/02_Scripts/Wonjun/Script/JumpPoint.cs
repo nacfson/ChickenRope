@@ -8,7 +8,8 @@ public class JumpPoint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.collider.gameObject.GetComponent<Player>().Jump();
+            collision.collider.gameObject.GetComponent<PlayerTest>().jumpCount = 1;
+            collision.collider.gameObject.GetComponent<PlayerTest>().sp.color = Color.red;
             Destroy(gameObject);
         }
     }
