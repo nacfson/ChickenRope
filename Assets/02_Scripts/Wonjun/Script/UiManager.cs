@@ -46,7 +46,7 @@ public class UiManager : MonoBehaviour
     }
     public void GameStart()//���� ����
     {
-        SceneManager.LoadScene("StageSelect");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Debug.Log(SceneManager.GetActiveScene().buildIndex);
     }
     public void GameExplain()// ���� ���� â ����
