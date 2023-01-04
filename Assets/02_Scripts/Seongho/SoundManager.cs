@@ -148,9 +148,7 @@ public class SoundManager : MonoBehaviour
 
     public void Replay()
     {
-        SoundManager.Instance.EffectSource.PlayOneShot(PlaySound(0));
         SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
-        SetActiveFalseSettingPanel();
         if (SceneManager.GetActiveScene().buildIndex > 3)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -161,9 +159,7 @@ public class SoundManager : MonoBehaviour
     }
     public void Exit()
     {
-        SoundManager.Instance.EffectSource.PlayOneShot(PlaySound(0));
         SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
-        SetActiveFalseSettingPanel();
 
         GameManager.Instance.GoToMainMenu();
     }

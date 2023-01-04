@@ -48,17 +48,19 @@ public class SaveJson : MonoBehaviour
     }
     public void Load()
     {
-        Debug.Log("123");
-        if (File.Exists(savePath + saveFileName))
+        try
         {
-            Debug.Log("1234");
+            if (File.Exists(savePath + saveFileName))
+            {
+                MiniTitleText.Instance.OnText("로드 성공");
 
-            string loadJson = File.ReadAllText(savePath + saveFileName);
-            saveData = JsonUtility.FromJson<SaveData>(loadJson);
-            player = FindObjectOfType<Player>();
-            Debug.Log(player);
+                string loadJson = File.ReadAllText(savePath + saveFileName);
+                saveData = JsonUtility.FromJson<SaveData>(loadJson);
+                player = FindObjectOfType<Player>();
 
-            player.transform.position = saveData.playerPos;
+                player.transform.position = saveData.playerPos;
+            }
         }
+        catch { MiniTitleText.Instance.OnText("로드되지 않았습니다."); }
     }
 }
