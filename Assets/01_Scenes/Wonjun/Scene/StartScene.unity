@@ -950,7 +950,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 254996061}
+  m_TargetGraphic: {fileID: 575834578}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -2463,7 +2463,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 800566119}
+  m_TargetGraphic: {fileID: 315128903}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -5773,9 +5773,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC774\uB3D9\uD558\uAE30 :  A D \u2190 \u2192 \uC2A4\uD398\uC774\uC2A4
     \uBC14 \u2191 \n\uB85C\uD504 : E\n\uC2A4\uD0AC : \uC288\uD37C \uC810\uD504(\uD3EC\uC778\uD2B8\uAC00
-    \uC788\uB294 \uC0C1\uD0DC\uC5D0\uC11C \uC2A4\uD398\uC774\uC2A4 \uBC14),\n\uD0C8\uCD9C
-    : (\uB36B \uC7A5\uC560\uBB3C\uC744 \uBC1F\uC740 \uB2E4\uC74C\uC5D0 10\uCD08 \uC548\uC5D0
-    R\uD0A4 \uB204\uB97C \uC2DC \uC6D0 \uC704\uCE58)"
+    \uC788\uB294 \uC0C1\uD0DC\uC5D0\uC11C \uC2A4\uD398\uC774\uC2A4 \uBC14)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99f122b52c7f0bd44a89924693382e04, type: 2}
   m_sharedMaterial: {fileID: -7828997846565401069, guid: 99f122b52c7f0bd44a89924693382e04, type: 2}
@@ -5997,7 +5995,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1775741036}
+  m_TargetGraphic: {fileID: 816338594}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
