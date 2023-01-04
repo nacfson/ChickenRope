@@ -155,7 +155,7 @@ public class SoundManager : MonoBehaviour
             GameManager.Instance.UISceneLoad();
         }
         else
-            Debug.LogError("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
+            MiniTitleText.Instance.OnText("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
     }
     public void Exit()
     {
