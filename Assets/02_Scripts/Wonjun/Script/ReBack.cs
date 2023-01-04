@@ -18,17 +18,17 @@ public class ReBack : MonoBehaviour
         anim = GetComponent<Animator>();
         _player = GameObject.Find("Player").GetComponent<PlayerTest>();
         _player1 = GameObject.Find("Player").GetComponent<Player>();
-            isStop = true;
+        isStop = true;
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (collision.CompareTag("Player") &&isStop)
+
+        if (collision.CompareTag("Player") && isStop)
         {
             Rigidbody2D rigid = collision.gameObject.GetComponent<Rigidbody2D>();
-        anim.SetTrigger("trabcl");
+            anim.SetTrigger("trabcl");
             StartCoroutine(TrabCol(rigid));
-            
+
             isStop = false;
         }
     }

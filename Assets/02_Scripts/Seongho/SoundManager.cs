@@ -84,11 +84,13 @@ public class SoundManager : MonoBehaviour
     }
     public void MuteBackGroundSound()
     {
+        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
         SetCanMute_BackGound(BG_IsCanMute, 0);
     }
 
     public void MuteEffectSound()
     {
+        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
         SetCanMute_Effect(EF_IsCanMute, 1);
     }
     public void SetCanMute_BackGound(bool Mute, int index)
@@ -133,16 +135,26 @@ public class SoundManager : MonoBehaviour
 
     public void Cancel()
     {
+        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+
         settingPannel.SetActive(false);
     }
 
     public void Replay()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        GameManager.Instance.UISceneLoad();
+        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+        if (SceneManager.GetActiveScene().buildIndex > 3)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameManager.Instance.UISceneLoad();
+        }
+        else
+            Debug.Log("∞‘¿” æ¿¿Ã æ∆¥’¥œ¥Ÿ.");
     }
     public void Exit()
     {
+        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+
         Application.Quit();
     }
     public AudioClip PlaySound(int index)
