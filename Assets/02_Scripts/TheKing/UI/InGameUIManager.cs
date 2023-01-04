@@ -52,7 +52,7 @@ public class InGameUIManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             _currentTime += 0.5f;
-            _timerText.text = _currentTime.ToString();
+            _timerText.text = _currentTime.ToString("F0");
         }
     }
 }
