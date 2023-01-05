@@ -36,7 +36,7 @@ public class InGameUIManager : MonoBehaviour
         StopCoroutine(TimerCor());
 
 
-        if(PlayerPrefs.GetFloat("BESTTIME") < _currentTime)
+        if(PlayerPrefs.GetFloat("BESTTIME") > _currentTime)
         {
             PlayerPrefs.SetFloat("BESTTIME", _currentTime);
         }
