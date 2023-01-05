@@ -2353,6 +2353,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   saveSceneIndex: 0
+  saveJson: {fileID: 0}
   panel: {fileID: 973921844}
   exPanel: {fileID: 1245589549}
   storyPanel: {fileID: 1567453433}
@@ -3539,6 +3540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ed096276bbcf4439b4500a18f71926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!224 &1030384003
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4800,6 +4802,7 @@ GameObject:
   - component: {fileID: 1417724435}
   - component: {fileID: 1417724434}
   - component: {fileID: 1417724433}
+  - component: {fileID: 1417724436}
   m_Layer: 5
   m_Name: MainTitleText
   m_TagString: Untagged
@@ -4942,6 +4945,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417724431}
   m_CullTransparentMesh: 1
+--- !u!114 &1417724436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417724431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e8fcb8a02a11f49b933f07e805c66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1 &1455938374
 GameObject:
   m_ObjectHideFlags: 0
@@ -7271,3 +7287,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c47a76cdfd057149926df57878f5b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}

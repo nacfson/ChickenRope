@@ -29,11 +29,13 @@ public class Player : MonoBehaviour
     public static UnityAction RopeDie;
     public int jumpCount;
     public bool canMove;
+    public Transform playerParentTr;
 
 
 
     private void Awake()
     {
+        playerParentTr = transform.parent;
         jumpCount = 1;
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         input = Input.GetAxis("Horizontal");
+        //playerParentTr.position = this.transform.position;
         //Debug.Log(_rigid.velocity.y);
     }
     public void ClearGame()

@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     private void AdministratorFunction()
     {
-        _player = GameObject.Find("FinalPlayer").transform;
+        _player = GameObject.Find("RealFinalPlayer").transform;
         GameObject obj = Instantiate(_clearObject);
         obj.transform.position = _player.position;
     }
