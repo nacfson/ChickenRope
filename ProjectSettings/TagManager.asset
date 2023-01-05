@@ -12,6 +12,7 @@ TagManager:
   - DieObstacle
   - FxTemporaire
   - Rand
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - DontDestroy
   - HookCollider
   - Minimap
-  - 
+  - Rope
   - 
   - 
   - 
