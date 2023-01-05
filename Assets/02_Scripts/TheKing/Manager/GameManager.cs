@@ -67,9 +67,11 @@ public class GameManager : MonoBehaviour
     }
     public void SaveClearScene()
     {
-        if (PlayerPrefs.GetInt(clearIndexName) < SceneManager.GetActiveScene().buildIndex)
+        Debug.Log("NotClear");
+        if (PlayerPrefs.GetInt(clearIndexName) <= SceneManager.GetActiveScene().buildIndex - _denfinitionInt)
         {
-            PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex - _denfinitionInt);
+            Debug.Log("CLear");
+            PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex - _denfinitionInt + 1);
         }
     }
 

@@ -31,6 +31,7 @@ public class SceneMoveManager : MonoBehaviour
         SceneManager.LoadScene("Stage04");
         MainTitleText.Instance.OnText("Move to Stage04 Scene");
         StageStart();
+        GameManager.Instance.SaveClearScene();
     }
 
     //public void MoveStage(string sceneName)

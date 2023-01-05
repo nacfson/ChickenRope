@@ -29,7 +29,6 @@ public class StageManager : MonoBehaviour
 
     private void Update()
     {
-        EnableStartButton();
         UpdateUI();
 
     }
@@ -93,12 +92,16 @@ public class StageManager : MonoBehaviour
     public void OnClickPrevious()
     {
         currentPage--;
+        EnableStartButton();
+
         UpdateUI();
     }
 
     public void OnClickNext()
     {
         currentPage++;
+        EnableStartButton();
+
         UpdateUI();
     }
 }
