@@ -39,10 +39,16 @@ public class StageManager : MonoBehaviour
         GameManager.Instance.SaveClearScene();
         if(currentPage <= GameManager.Instance.ReturnStageClearIndex())
         {
+            Color color = _startButton.GetComponent<Image>().color;
+            color.a = 1f;
+            _startButton.GetComponent<Image>().color = color;
             _startButton.enabled = true;
         }
         else
         {
+            Color color = _startButton.GetComponent<Image>().color;
+            color.a = 0.3f;
+            _startButton.GetComponent<Image>().color = color;
             _startButton.enabled = false;
         }
     }
