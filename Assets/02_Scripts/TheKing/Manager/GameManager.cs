@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public string clearIndexName = "CLEARINDEX";
     public UnityAction ClearAction;
     public UnityAction LoadSceneAction;
+    public UnityAction SaveLoadAction;
 
     [SerializeField]
     private GameObject _clearObject;

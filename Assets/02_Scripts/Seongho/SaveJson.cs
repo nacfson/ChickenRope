@@ -45,6 +45,7 @@ public class SaveJson : MonoBehaviour
             string json = JsonUtility.ToJson(saveData);
             File.WriteAllText(savePath + saveFileName, json);
             MiniTitleText.Instance.OnText("저장 완료");
+            PlayerPrefs.SetFloat("CURRENTTIME",InGameUIManager.CurrentTime);
         }
 
         catch { MiniTitleText.Instance.OnText("저장 할 수 없습니다."); SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0)); }
@@ -63,6 +64,7 @@ public class SaveJson : MonoBehaviour
                 player = FindObjectOfType<Player>();
 
                 player.transform.position = saveData.playerPos;
+                GameManager.Instance.SaveLoadAction?.Invoke();
             }
         }
         catch { MiniTitleText.Instance.OnText("로드되지 않았습니다."); }
