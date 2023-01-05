@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     private void ChangeRopeHealth(int plus)
     {
         ropeHP += plus;
-        if(ropeHP <= 0)
+        if (ropeHP <= 0)
         {
             RopeDie?.Invoke();
         }
@@ -71,18 +71,18 @@ public class Player : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Ring")&& hook.isAttach)
+        if (other.gameObject.CompareTag("Ring") && hook.isAttach)
         {
             //ChangeRopeHealth(-1);
-            
+
         }
     }
 
-    
+
 
     public void OnMove()
     {
-        if(Mathf.Abs(input) >0)
+        if (Mathf.Abs(input) > 0)
         {
             if (canMove)
             {
@@ -93,12 +93,12 @@ public class Player : MonoBehaviour
     }
     void FlipCharacter(float x)
     {
-        if(x > 0 )
+        if (x > 0)
         {
             _spriteRenderer.flipX = true;
-            _animator.SetBool("run",true);
+            _animator.SetBool("run", true);
         }
-        else if( x < 0)
+        else if (x < 0)
         {
             _spriteRenderer.flipX = false;
             _animator.SetBool("run", true);
@@ -110,8 +110,9 @@ public class Player : MonoBehaviour
     }
     public void OnJump()
     {
-        if(CheckGround())
+        if (CheckGround())
         {
+            SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(5));
             _rigid.AddForce(Vector3.up * _jumpPower);
             jumpCount--;
         }
@@ -123,8 +124,8 @@ public class Player : MonoBehaviour
 
     public bool CheckGround()
     {
-        bool grounded = Physics2D.Raycast(transform.position,Vector2.down, 0.5f,_layerMask);
-        if(_rigid.velocity.y <= -0.3f && grounded)
+        bool grounded = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, _layerMask);
+        if (_rigid.velocity.y <= -0.3f && grounded)
         {
             Debug.Log("CameraShake");
             _cameraShake.CrashShake();

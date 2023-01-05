@@ -34,6 +34,8 @@ public class SaveJson : MonoBehaviour
     {
         try
         {
+            SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
+
             player = FindObjectOfType<Player>();
             saveData.playerPos = player.transform.position;
             Debug.Log(player.transform.position);
@@ -44,7 +46,8 @@ public class SaveJson : MonoBehaviour
             File.WriteAllText(savePath + saveFileName, json);
             MiniTitleText.Instance.OnText("저장 완료");
         }
-        catch { MiniTitleText.Instance.OnText("저장 할 수 없습니다."); }
+
+        catch { MiniTitleText.Instance.OnText("저장 할 수 없습니다."); SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0)); }
     }
     public void Load()
     {
@@ -53,7 +56,7 @@ public class SaveJson : MonoBehaviour
             if (File.Exists(savePath + saveFileName))
             {
                 MiniTitleText.Instance.OnText("로드 성공");
-                MainTitleText.Instance.OnText($"Move to Stage0{SceneManager.GetActiveScene().buildIndex-3} Scene");
+                MainTitleText.Instance.OnText($"Move to Stage0{SceneManager.GetActiveScene().buildIndex - 3} Scene");
 
                 string loadJson = File.ReadAllText(savePath + saveFileName);
                 saveData = JsonUtility.FromJson<SaveData>(loadJson);

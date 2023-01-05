@@ -6,6 +6,7 @@ public class PlayerTest : MonoBehaviour
 {
     public LayerMask a;
     public bool below;
+    bool IsSuperJump;
     public SpriteRenderer sp;
 
 
@@ -37,7 +38,7 @@ public class PlayerTest : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
+
 
     }
 
@@ -45,33 +46,25 @@ public class PlayerTest : MonoBehaviour
     void Update()
     {
         below = Physics2D.Raycast(transform.position, Vector2.down, 3f, a);
-
-        
-
-
-        
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount >=1 && below == true)
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount >= 1 && below == true)
         {
+            SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(2));
+
             _rigid.velocity = new Vector2(_rigid.velocity.x, 10f);
             jumpCount--;
             StartCoroutine(Jump());
         }
-
-        
-
-       
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("trab2"))
+        if (collision.gameObject.CompareTag("trab2"))
         {
-        transform.position = new Vector3(0, 0, 0);
-        Debug.Log("dd");
-        Destroy(collision.gameObject);
+            transform.position = new Vector3(0, 0, 0);
+            Debug.Log("dd");
+            Destroy(collision.gameObject);
 
         }
-        
+
     }
 
     IEnumerator Jump()
@@ -81,6 +74,6 @@ public class PlayerTest : MonoBehaviour
         yield return new WaitForSeconds(1);
         pAnimation.SetBool("Jump", false);
     }
-    
+
 
 }
