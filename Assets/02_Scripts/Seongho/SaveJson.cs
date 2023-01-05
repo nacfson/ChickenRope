@@ -56,6 +56,8 @@ public class SaveJson : MonoBehaviour
         {
             if (File.Exists(savePath + saveFileName))
             {
+                GameManager.Instance.UISceneLoad();
+
                 MiniTitleText.Instance.OnText("로드 성공");
                 MainTitleText.Instance.OnText($"Move to Stage0{SceneManager.GetActiveScene().buildIndex - 3} Scene");
 

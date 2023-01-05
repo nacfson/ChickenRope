@@ -26,7 +26,7 @@ public class UiManager : MonoBehaviour
     {
         string savePath = Application.dataPath + "/SaveData/";
         saveData = new SaveData();
-        if (!File.Exists(savePath))
+        if (!Directory.Exists(savePath))
         {
             string loadJson = File.ReadAllText(savePath + saveFileName);
             saveData = JsonUtility.FromJson<SaveData>(loadJson);
@@ -92,7 +92,6 @@ public class UiManager : MonoBehaviour
         //saveJson.Load();
         GameManager.Instance.Load(saveJson);
 
-        GameManager.Instance.UISceneLoad();
         gameObject.SetActive(false);
     }
 
