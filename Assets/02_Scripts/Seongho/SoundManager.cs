@@ -48,8 +48,12 @@ public class SoundManager : MonoBehaviour
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
             settingPannel.SetActive(!settingPannel.activeInHierarchy);
+        }
         if (settingPannel.activeInHierarchy == true) Time.timeScale = 0;
+
         else if (settingPannel.activeInHierarchy == false) Time.timeScale = 1;
     }
     #region 사운드 설정
@@ -65,10 +69,10 @@ public class SoundManager : MonoBehaviour
     }
     private void Start()
     {
-        slider[0].value = 0;
-        slider[1].value = 0;
-        musicSource.volume = 0;
-        EffectSource.volume = 0;
+        slider[0].value = 0.5f;
+        slider[1].value = 0.5f;
+        musicSource.volume = 0.5f;
+        EffectSource.volume = 0.5f;
     }
     public void SetMusicVolume()
     {

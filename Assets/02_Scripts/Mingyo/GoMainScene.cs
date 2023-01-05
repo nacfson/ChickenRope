@@ -7,6 +7,7 @@ public class GoMainScene : MonoBehaviour
 {
     public void GOMainBtn()
     {
+        SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
         SceneManager.LoadScene("StartScene");
     }
 }
