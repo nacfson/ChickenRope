@@ -12,6 +12,8 @@ public class MainTitleText : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+            else
+            Destroy(gameObject);
         _Text = GetComponent<TextMeshProUGUI>();
         anim = GetComponent<Animator>();
     }
