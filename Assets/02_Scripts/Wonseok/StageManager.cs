@@ -23,8 +23,8 @@ public class StageManager : MonoBehaviour
 
     public List<LevelDataProperty> mapData;
 
-    public int currentPage;
-    public int definitionInt = 1;
+    public static int currentPage;
+    public int definitionInt = 4;
 
 
     private void Update()

@@ -59,7 +59,15 @@ public class Player : MonoBehaviour
     }
     public void ClearGame()
     {
-        StartCoroutine(ClearGameCor());
+        try 
+        {
+            StartCoroutine(ClearGameCor());
+
+        }
+        catch
+        {
+            GameManager.Instance.GoToMainMenu();
+        }
     }
     private void FixedUpdate()
     {

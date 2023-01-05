@@ -10,7 +10,7 @@ public class InGameSceneManager : MonoBehaviour
     }
     public void GameUIScene()
     {
-        SceneManager.LoadScene("InGameUI",LoadSceneMode.Additive);
+        //SceneManager.LoadScene("InGameUI",LoadSceneMode.Additive);
         GameManager.Instance.UISceneLoad();
     }
 

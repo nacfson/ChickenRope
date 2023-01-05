@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+
+
         else
         {
             Destroy(this.gameObject);
@@ -93,12 +95,18 @@ public class GameManager : MonoBehaviour
     [ContextMenu("LoadNextScene")]
     public void LoadNextScene()
     {
-        SaveClearScene();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if(StageManager.currentPage < 3)
+        {
+            SaveClearScene();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            UISceneLoad();
+            LoadSceneAction?.Invoke();
+        }
+        else
+        {
+            SceneManager.LoadScene("EndScene");
+        }
 
-        SceneManager.LoadScene("InGameUI", LoadSceneMode.Additive);
-        UISceneLoad();
-        LoadSceneAction?.Invoke();
     }
 
     public void UISceneLoad()
