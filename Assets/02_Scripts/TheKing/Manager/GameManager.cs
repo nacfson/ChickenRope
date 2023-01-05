@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     public void SaveClearScene()
     {
         Debug.Log("NotClear");
-        SoundManager.Instance.PlayBGM(5);
+        //SoundManager.Instance.PlayBGM(5);/
         if (PlayerPrefs.GetInt(clearIndexName) <= SceneManager.GetActiveScene().buildIndex - _denfinitionInt)
         {
             Debug.Log("CLear");

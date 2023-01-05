@@ -29,7 +29,6 @@ public class PlayerTest : MonoBehaviour
     }
     public void SuperJump()
     {
-        //_rigid.velocity = new Vector2(_rigid.velocity.x, 100f);
         Debug.Log("1");
         _rigid.AddForce(Vector2.up * superJumpValue, ForceMode2D.Impulse);
         StartCoroutine(Jump());

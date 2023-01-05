@@ -34,11 +34,6 @@ public class SceneMoveManager : MonoBehaviour
         GameManager.Instance.SaveClearScene();
     }
 
-    //public void MoveStage(string sceneName)
-    //{
-    //    SceneManager.LoadScene(sceneName);
-    //    StageStart();
-    //}
     public void MainMenu()
     {
         SceneManager.LoadScene("StartScene");
