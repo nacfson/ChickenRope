@@ -23,11 +23,14 @@ public class Player : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     private CameraShake _cameraShake;
+    private PlayerTest PlayerTest;
 
     private float input;
 
     public static UnityAction RopeDie;
-    public int jumpCount;
+
+    public int SuperjumpCount;
+
     public bool canMove;
     public Transform playerParentTr;
 
@@ -36,7 +39,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         playerParentTr = transform.parent;
-        jumpCount = 1;
+        PlayerTest = GetComponent<PlayerTest>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigid = GetComponent<Rigidbody2D>();
@@ -115,9 +118,18 @@ public class Player : MonoBehaviour
     {
         if (CheckGround())
         {
-            SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(5));
-            _rigid.AddForce(Vector3.up * _jumpPower);
-            jumpCount--;
+            if (SuperjumpCount >= 1) //슈퍼점프
+            {
+                PlayerTest.SuperJump();
+                SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(2));
+
+                SuperjumpCount--;
+            }
+            else if(SuperjumpCount <=0)// 기본점프
+            {
+                SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(5));
+                _rigid.AddForce(Vector3.up * _jumpPower);
+            }
         }
     }
     public void Jump()
@@ -127,21 +139,7 @@ public class Player : MonoBehaviour
 
     public bool CheckGround()
     {
-/*<<<<<<< HEAD
         bool grounded = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, _layerMask);
-        if (_rigid.velocity.y <= -0.3f && grounded)
-        {
-            Debug.Log("CameraShake");
-            _cameraShake.CrashShake();
-        }*/
-
-        bool grounded = Physics2D.Raycast(transform.position,Vector2.down, 0.5f,_layerMask);
-        // if(_rigid.velocity.y <= -0.3f && grounded)
-        // {
-        //     Debug.Log("CameraShake");
-        //     _cameraShake.CrashShake();
-        // }
-
         return grounded;
     }
 
