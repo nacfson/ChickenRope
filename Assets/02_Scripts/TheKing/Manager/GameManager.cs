@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _clearObject;
     private Transform _player;
-
+    private int _denfinitionInt = 4;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         StartCoroutine(AdministatorCor());
+
+        ClearAction += SaveClearScene;
     }
     IEnumerator AdministatorCor()
     {
@@ -56,12 +58,23 @@ public class GameManager : MonoBehaviour
         GameObject obj = Instantiate(_clearObject);
         obj.transform.position = _player.position;
     }
+    [ContextMenu("SetSceneIndex")]
+
+    public void SetSceneIndex()
+    {
+        PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex - _denfinitionInt);
+    }
     public void SaveClearScene()
     {
         if (PlayerPrefs.GetInt(clearIndexName) < SceneManager.GetActiveScene().buildIndex)
         {
-            PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex);
+            PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex - _denfinitionInt);
         }
+    }
+
+    public int ReturnStageClearIndex()
+    {
+        return PlayerPrefs.GetInt(clearIndexName);
     }
 
     public int LoadClearScene()

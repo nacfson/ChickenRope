@@ -567,7 +567,7 @@ MonoBehaviour:
     m_Bits: 128
   _maxSpeed: 5
   ropeHP: 3
-  jumpCount: 0
+  SuperjumpCount: 0
   canMove: 0
   playerParentTr: {fileID: 0}
 --- !u!114 &1682558223860947725
@@ -582,12 +582,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d3d58f263193449add7b50c7116fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  superJumpValue: 70
   a:
     serializedVersion: 2
     m_Bits: 128
   below: 0
   sp: {fileID: 0}
-  jumpCount: 0
 --- !u!95 &2468945801819112170
 Animator:
   serializedVersion: 3
@@ -1731,6 +1731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinimapUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1480025647370755585, guid: 76501142406741d41b593aa3d9c25836, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bb2d80b2969497447b6302297ea2e344, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76501142406741d41b593aa3d9c25836, type: 3}
 --- !u!224 &3163355297528016278 stripped
