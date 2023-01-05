@@ -3273,6 +3273,10 @@ MonoBehaviour:
   settingPannel: {fileID: 1382015741}
   musicSource: {fileID: 70688305}
   EffectSource: {fileID: 589767204}
+  stage_BGM:
+  - {fileID: 8300000, guid: 8f74549e7ae4c4f4baead7897aecfe79, type: 3}
+  - {fileID: 8300000, guid: ce3006b12e21df347b546e015c788143, type: 3}
+  - {fileID: 8300000, guid: 171f126faeeb7c6458d2494189886923, type: 3}
   cd:
   - {fileID: 8300000, guid: 48af4b620abb34a459a1b801c2c7d3fd, type: 3}
   - {fileID: 8300000, guid: e99a6c3d0a453f0469336513676621e4, type: 3}

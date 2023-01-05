@@ -7,11 +7,14 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+    public int scneaaa;
     public GameObject settingPannel;
     public static SoundManager Instance;
     public AudioSource musicSource;
     public AudioSource EffectSource;
 
+
+    public List<AudioClip> stage_BGM = new List<AudioClip>();
     public AudioClip[] cd; // 사용법 :SoundManager.Instance.EffectSource.PlayOneShot(SoundManager.Instance.PlaySound(0));
 
 
@@ -45,6 +48,23 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private Sprite EF_image;
     [SerializeField] private Sprite EF_Muteimage;
     #endregion
+    #region 사운드 설정
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
+    private void Start()
+    {
+        slider[0].value = 0.5f;
+        slider[1].value = 0.5f;
+        musicSource.volume = 0.5f;
+        EffectSource.volume = 0.5f;
+
+        SceneManager.sceneLoaded += LoadedsceneEvent;
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -56,23 +76,32 @@ public class SoundManager : MonoBehaviour
 
         else if (settingPannel.activeInHierarchy == false) Time.timeScale = 1;
     }
-    #region 사운드 설정
-    private void Awake()
+
+    private void LoadedsceneEvent(Scene scene, LoadSceneMode mode)
     {
-        if (Instance == null)
-            Instance = this;
+        scneaaa = SceneManager.GetActiveScene().buildIndex;
+        switch (scneaaa)
+        {
+            case 4:
+                PlayBGM(1);
+                break;
+            case 5:
+                PlayBGM(2);
+                break;
+            case 6:
+                PlayBGM(3);
+                break;
+            case 7:
+                PlayBGM(4);
+                break;
+
+            default: PlayBGM(0); break;
+        }
     }
 
     public void SetActiveFalseSettingPanel()
     {
         settingPannel.SetActive(false);
-    }
-    private void Start()
-    {
-        slider[0].value = 0.5f;
-        slider[1].value = 0.5f;
-        musicSource.volume = 0.5f;
-        EffectSource.volume = 0.5f;
     }
     public void SetMusicVolume()
     {
@@ -173,5 +202,12 @@ public class SoundManager : MonoBehaviour
     {
         EffectSource.clip = cd[index];
         return cd[index];
+    }
+
+    public void PlayBGM(int index)
+    {
+        musicSource.clip = null;
+        musicSource.clip = stage_BGM[index];
+        musicSource.Play();
     }
 }
