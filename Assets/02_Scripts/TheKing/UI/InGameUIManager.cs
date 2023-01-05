@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class InGameUIManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class InGameUIManager : MonoBehaviour
     void Awake()
     {
         StartTimer();
+        GameManager.Instance.SaveLoadAction += SaveNLoadTimer;
         StartCoroutine(TimerCor());
 
         GameManager.Instance.ClearAction += StopTimer;
@@ -31,14 +33,28 @@ public class InGameUIManager : MonoBehaviour
         GameManager.Instance.LoadSceneAction += StartTimer;
     }
 
+    private void SaveNLoadTimer()
+    {
+        _currentTime = PlayerPrefs.GetFloat("CURRENTTIME");
+        canTimer = true;
+        _topUI.SetActive(true);
+    }
+
+    
+
     public void DieProcess()
     {
         StopCoroutine(TimerCor());
 
-
+        if(PlayerPrefs.GetFloat("BESTTIME") < 1f)
+        {
+            PlayerPrefs.SetFloat("BESTTIME",_currentTime);
+            PlayerPrefs.SetFloat("CURRENTTIME",_currentTime);
+        }
         if(PlayerPrefs.GetFloat("BESTTIME") > _currentTime)
         {
             PlayerPrefs.SetFloat("BESTTIME", _currentTime);
+            PlayerPrefs.SetFloat("CURRENTTIME",_currentTime);
         }
     }
 

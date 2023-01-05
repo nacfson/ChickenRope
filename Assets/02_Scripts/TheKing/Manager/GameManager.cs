@@ -9,11 +9,12 @@ public class GameManager : MonoBehaviour
     public string clearIndexName = "CLEARINDEX";
     public UnityAction ClearAction;
     public UnityAction LoadSceneAction;
+    public UnityAction SaveLoadAction;
 
     [SerializeField]
     private GameObject _clearObject;
     private Transform _player;
-
+    private int _denfinitionInt = 4;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         StartCoroutine(AdministatorCor());
+
+        ClearAction += SaveClearScene;
     }
     IEnumerator AdministatorCor()
     {
@@ -56,12 +59,25 @@ public class GameManager : MonoBehaviour
         GameObject obj = Instantiate(_clearObject);
         obj.transform.position = _player.position;
     }
+    [ContextMenu("SetSceneIndex")]
+
+    public void SetSceneIndex()
+    {
+        PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex - _denfinitionInt);
+    }
     public void SaveClearScene()
     {
-        if (PlayerPrefs.GetInt(clearIndexName) < SceneManager.GetActiveScene().buildIndex)
+        Debug.Log("NotClear");
+        if (PlayerPrefs.GetInt(clearIndexName) <= SceneManager.GetActiveScene().buildIndex - _denfinitionInt)
         {
-            PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex);
+            Debug.Log("CLear");
+            PlayerPrefs.SetInt(clearIndexName, SceneManager.GetActiveScene().buildIndex - _denfinitionInt + 1);
         }
+    }
+
+    public int ReturnStageClearIndex()
+    {
+        return PlayerPrefs.GetInt(clearIndexName);
     }
 
     public int LoadClearScene()

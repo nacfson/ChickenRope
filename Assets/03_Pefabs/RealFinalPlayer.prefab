@@ -567,8 +567,9 @@ MonoBehaviour:
     m_Bits: 128
   _maxSpeed: 5
   ropeHP: 3
-  jumpCount: 0
+  SuperjumpCount: 0
   canMove: 0
+  playerParentTr: {fileID: 0}
 --- !u!114 &1682558223860947725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,12 +582,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d3d58f263193449add7b50c7116fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  superJumpValue: 70
   a:
     serializedVersion: 2
     m_Bits: 128
   below: 0
   sp: {fileID: 0}
-  jumpCount: 0
 --- !u!95 &2468945801819112170
 Animator:
   serializedVersion: 3
@@ -788,7 +789,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2468945801946223199}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12820482, y: 1.6967317, z: -30}
+  m_LocalPosition: {x: -0.12820482, y: 2.086732, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7410365033529497679}
@@ -978,16 +979,16 @@ MonoBehaviour:
   m_ZDamping: 3.06
   m_TargetMovementOnly: 1
   m_ScreenX: 0.573
-  m_ScreenY: 0.733
+  m_ScreenY: 0.772
   m_CameraDistance: 30
   m_DeadZoneWidth: 0.461
-  m_DeadZoneHeight: 0.614
+  m_DeadZoneHeight: 0.2
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 1.13
   m_SoftZoneHeight: 0.725
   m_BiasX: 0
-  m_BiasY: -0.008003669
+  m_BiasY: -0.008003711
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 0
@@ -1025,7 +1026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2468945802212968503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12820482, y: 1.6967317, z: -30}
+  m_LocalPosition: {x: -0.12820482, y: 2.086732, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2468945802051527220}
@@ -1730,6 +1731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinimapUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1480025647370755585, guid: 76501142406741d41b593aa3d9c25836, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bb2d80b2969497447b6302297ea2e344, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76501142406741d41b593aa3d9c25836, type: 3}
 --- !u!224 &3163355297528016278 stripped

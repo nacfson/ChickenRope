@@ -13,6 +13,7 @@ public class StageManager : MonoBehaviour
         public Sprite levelSprite;
         public string levelName;
     }
+
     [SerializeField] Button _previousButton;
     [SerializeField] Button _nextButton;
     [SerializeField] Button _startButton;
@@ -28,9 +29,27 @@ public class StageManager : MonoBehaviour
 
     private void Update()
     {
-
         UpdateUI();
 
+    }
+
+    public void EnableStartButton()
+    {
+        GameManager.Instance.SaveClearScene();
+        if(currentPage <= GameManager.Instance.ReturnStageClearIndex())
+        {
+            Color color = _startButton.GetComponent<Image>().color;
+            color.a = 1f;
+            _startButton.GetComponent<Image>().color = color;
+            _startButton.enabled = true;
+        }
+        else
+        {
+            Color color = _startButton.GetComponent<Image>().color;
+            color.a = 0.3f;
+            _startButton.GetComponent<Image>().color = color;
+            _startButton.enabled = false;
+        }
     }
 
 
@@ -38,9 +57,6 @@ public class StageManager : MonoBehaviour
 
     public void OnClickStart()
     {
-        //string path = SceneUtility.GetScenePathByBuildIndex(currentPage + definitionInt + 1);
-        //string name = System.IO.Path.GetFileNameWithoutExtension(path);
-        //_sceneManager.MoveStage(name);
         if(currentPage == 0)
         {
             _sceneManager.MoveStage01();
@@ -76,12 +92,16 @@ public class StageManager : MonoBehaviour
     public void OnClickPrevious()
     {
         currentPage--;
+        EnableStartButton();
+
         UpdateUI();
     }
 
     public void OnClickNext()
     {
         currentPage++;
+        EnableStartButton();
+
         UpdateUI();
     }
 }
