@@ -94,6 +94,7 @@ public class SoundManager : MonoBehaviour
             case 7:
                 PlayBGM(4);
                 break;
+                
 
             default: PlayBGM(0); break;
         }

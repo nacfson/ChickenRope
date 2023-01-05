@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
     public void SaveClearScene()
     {
         Debug.Log("NotClear");
+        SoundManager.Instance.PlayBGM(5);
         if (PlayerPrefs.GetInt(clearIndexName) <= SceneManager.GetActiveScene().buildIndex - _denfinitionInt)
         {
             Debug.Log("CLear");
@@ -94,15 +95,10 @@ public class GameManager : MonoBehaviour
     {
         SaveClearScene();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
         SceneManager.LoadScene("InGameUI", LoadSceneMode.Additive);
         UISceneLoad();
-        //AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-        //while(!operation.isDone)
-        //{
-        //    return;
-        //}
         LoadSceneAction?.Invoke();
-        Debug.Log("LoadAction");
     }
 
     public void UISceneLoad()

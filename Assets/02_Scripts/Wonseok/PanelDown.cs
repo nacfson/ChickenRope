@@ -11,6 +11,7 @@ public class PanelDown : MonoBehaviour
     private TextMeshProUGUI _timerText;
     public void PanelMove()
     {
+        SoundManager.Instance.PlayBGM(5);
         transform.DOMoveY(550, 1f);
         _timerText.text = $"Current Time : {InGameUIManager.CurrentTime} \n Best Time : {PlayerPrefs.GetFloat("BESTTIME")}";
         //transform.position = originPos;

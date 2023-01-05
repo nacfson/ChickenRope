@@ -3270,10 +3270,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59f5992fa5902340aec45f1e060abcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scneaaa: 0
   settingPannel: {fileID: 1382015741}
   musicSource: {fileID: 70688305}
   EffectSource: {fileID: 589767204}
   stage_BGM:
+  - {fileID: 8300000, guid: 8f74549e7ae4c4f4baead7897aecfe79, type: 3}
+  - {fileID: 8300000, guid: 58cfc824a1c4789408a4dbf1812df7e9, type: 3}
+  - {fileID: 8300000, guid: 58cfc824a1c4789408a4dbf1812df7e9, type: 3}
   - {fileID: 8300000, guid: 8f74549e7ae4c4f4baead7897aecfe79, type: 3}
   - {fileID: 8300000, guid: ce3006b12e21df347b546e015c788143, type: 3}
   - {fileID: 8300000, guid: 171f126faeeb7c6458d2494189886923, type: 3}
