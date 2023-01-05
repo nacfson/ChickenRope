@@ -124,12 +124,21 @@ public class Player : MonoBehaviour
 
     public bool CheckGround()
     {
+/*<<<<<<< HEAD
         bool grounded = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, _layerMask);
         if (_rigid.velocity.y <= -0.3f && grounded)
         {
             Debug.Log("CameraShake");
             _cameraShake.CrashShake();
-        }
+        }*/
+
+        bool grounded = Physics2D.Raycast(transform.position,Vector2.down, 0.5f,_layerMask);
+        // if(_rigid.velocity.y <= -0.3f && grounded)
+        // {
+        //     Debug.Log("CameraShake");
+        //     _cameraShake.CrashShake();
+        // }
+
         return grounded;
     }
 
