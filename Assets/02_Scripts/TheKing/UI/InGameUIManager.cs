@@ -22,13 +22,13 @@ public class InGameUIManager : MonoBehaviour
     private static float _currentTime;
     public bool canTimer;
 
-    void Awake()
+    void Start()
     {
         StartTimer();
         GameManager.Instance.SaveLoadAction += SaveNLoadTimer;
         StartCoroutine(TimerCor());
 
-        GameManager.Instance.ClearAction += StopTimer;
+        //GameManager.Instance.ClearAction += StopTimer;
         GameManager.Instance.ClearAction += DieProcess;
         GameManager.Instance.LoadSceneAction += StartTimer;
     }

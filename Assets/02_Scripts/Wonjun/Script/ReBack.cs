@@ -14,8 +14,8 @@ public class ReBack : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        _player = GameObject.Find("Player").GetComponent<PlayerTest>();
-        _player1 = GameObject.Find("Player").GetComponent<Player>();
+        // _player = GameObject.Find("Player").GetComponent<PlayerTest>();
+        // _player1 = GameObject.Find("Player").GetComponent<Player>();
         isStop = true;
     }
     public void OnTriggerEnter2D(Collider2D collision)
@@ -32,6 +32,7 @@ public class ReBack : MonoBehaviour
     }
     public void trab1()
     {
+        player = FindObjectOfType<Player>().gameObject.transform.gameObject;
         player.transform.localPosition = new Vector3(0, 0, 0);
         gameObject.SetActive(false);
     }
